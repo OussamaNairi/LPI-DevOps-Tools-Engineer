@@ -11,7 +11,7 @@
 
 
 
-<title>MyLabJournal</title>
+<title>Psyc 7709</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,9 +69,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -96,6 +94,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -110,7 +111,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -130,6 +130,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -151,19 +188,85 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -176,18 +279,36 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">LPI DevOps Tool Engineer</a>
+      <a class="navbar-brand" href="index.html">Psyc 7709</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="Syllabus.html">Syllabus</a>
 </li>
 <li>
-  <a href="Journal.html">Journal</a>
+  <a href="Schedule.html">Schedule</a>
 </li>
 <li>
-  <a href="Links.html">Links</a>
+  <a href="Videos.html">Videos</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="ExampleCode.html">ExampleCode</a>
+</li>
+<li>
+  <a href="Advanced.html">Package Notes</a>
+</li>
+<li>
+  <a href="MidtermAssignment.html">Midterm</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final</a>
+</li>
+<li>
+  <a href="book/docs/index.html">Our Book</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -201,7 +322,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">MyLabJournal</h1>
+<h1 class="title toc-ignore">Psyc 7709</h1>
 
 </div>
 
@@ -218,22 +339,14 @@ $(document).ready(function () {
 </style>
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
-<h1 id="my-lab-journal"><strong>DevOps Tools Engineer certification</strong></h1>
-<p>To meet this growing need for qualified professionals, LPI developed the Linux Professional Institute DevOps Tools Engineer certification which verifies the skills needed to use the tools that enhance collaboration in workflows throughout system administration and software development.</p>
-<h2 id="how-to-use">How to use</h2>
-<ol style="list-style-type: decimal">
-<li><p>Current version: 1.0 (Exam code 701-100)</p></li>
-<li><p>Objectives: 701-100.</p></li>
-<li><p>Prerequisites: There are no prerequisites for this certification. However, an additional certification in the candidate’s primary area of expertise, such as LPIC-1 or a developer certification, is strongly recommended.</p></li>
-<li><p>Requirements: Passing the DevOps Tools Engineer exam. The 90 minute exam is 60 multiple choice and fill-in-the-blank questions.</p></li>
-<li><p>Validity period: 5 years</p></li>
-<li><p>Cost: Click here for exam pricing in your country.</p></li>
-<li><p>Languages for exam available in VUE test centers: English, Japanese</p></li>
-</ol>
+<h1 id="psyc-7709"><strong>Psyc 7709</strong></h1>
+<h3 id="using-r-for-reproducible-research" style="padding-top: 0px;"><em>Using R for Reproducible research</em></h3>
+<p>This is the course website for Psyc 7709: Using R for Reproducible research (Spring 2019), offered through the Experimental Psychology Master’s program, Department of Psychology, Brooklyn College of CUNY.</p>
+<p>Instructor: Matthew Crump <a href="mcrump@brooklyn.cuny.edu">mcrump@brooklyn.cuny.edu</a></p>
 </div>
 <div class="col-sm-6">
-<h3 id="crump-lab-human-cognition-and-performance"><a href="https://www.lpi.org/our-certifications/devops-overview">Linux Professional Institute DevOps Tools Engineer</a></h3>
-<p><a href = "https://www.lpi.org/our-certifications/devops-overview"> <img src="images/DevOpsToolsEngineer.jpg" /> </a></p>
+<p><img src="images/RStudio.png" /></p>
+</div>
 </div>
 
 

@@ -1,0 +1,373 @@
+---
+title: "Statistics"
+author: "Matt"
+date: "1/31/2019"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message = FALSE)
+```
+
+**The most important thing about choosing statistics, is being able to justify the statistics that you choose.**
+
+There are many tools in the toolbox. There are many recommendations about what to do or not to do. It is a good idea to understand the statistics that you use, so that you can justify why you are using them for your analysis.
+
+## t-tests
+
+### one sample t-test
+
+Set `mu` to test against a population value
+
+```{r}
+x <- c(1,4,3,2,3,4,3,2,3,2,3,4)
+
+#non-directional
+t.test(x, mu = 2)
+t.test(x, mu = 2, alternative = "two.sided") # the default
+
+# directional
+t.test(x, mu = 2, alternative = "greater")
+t.test(x, mu = 2, alternative = "less")
+```
+
+### paired-sample t-test
+
+Set `paired=TRUE`
+
+```{r}
+x <- c(1,4,3,2,3,4,3,2,3,2,3,4)
+y <- c(3,2,5,4,3,2,3,2,1,2,2,3)
+
+#non-directional
+t.test(x, y, paired=TRUE)
+t.test(x, y, paired=TRUE, alternative = "two.sided") # the default
+
+# directional
+t.test(x, y, paired=TRUE, alternative = "greater")
+t.test(x, y, paired=TRUE, alternative = "less")
+```
+
+### Independent sample t-test
+
+Note: Default is Welch test, set `var.equal=TRUE` for t-test
+
+```{r}
+x <- c(1,4,3,2,3,4,3,2,3,2,3,4)
+y <- c(3,2,5,4,3,2,3,2,1,2,2,3)
+
+#non-directional
+t.test(x, y, var.equal=TRUE)
+t.test(x, y, var.equal=TRUE, alternative = "two.sided") # the default
+
+# directional
+t.test(x, y, var.equal=TRUE, alternative = "greater")
+t.test(x, y, var.equal=TRUE, alternative = "less")
+```
+
+### printing 
+
+```{r}
+library(broom)
+
+t_results <- t.test(x, y, var.equal=TRUE)
+knitr::kable(tidy(t_results))
+
+```
+
+### writing
+
+The contents of R variables can be written into R Markdown documents. 
+
+t(`r round(t_results$parameter, digits=2)`) =`r round(t_results$statistic, digits=2)`, p = `r round(t_results$p.value, digits=3)`
+
+```{r}
+# write your own function
+report_t <- function(x){
+  return(paste(c("t(",round(x$parameter, digits=2),") ",
+        "= ",round(x$statistic, digits=2),", ",
+        "p = ",round(x$p.value, digits=3)), collapse=""))
+}
+report_t(t_results)
+t_results
+```
+
+
+The results of my t-test were `r report_t(t_results)`.
+
+
+## ANOVA
+
+Requires data to be in long-format.
+
+```{r}
+# example creation of 2x2 data 
+Subjects <- rep(1:10,each=4)
+Factor1 <- rep(rep(c("A","B"), each = 2), 10)
+Factor2 <- rep(rep(c("1","2"), 2), 10)
+DV <- rnorm(40,0,1)
+
+all_data <- data.frame(Subjects = as.factor(Subjects),
+                       DV,
+                       Factor1,
+                       Factor2)
+```
+
+### between-subjects 1 factor
+
+```{r}
+
+# run anova
+aov_out <- aov(DV~Factor1, all_data)
+
+# summary
+summary(aov_out)
+
+# kable xtable printing
+library(xtable)
+knitr::kable(xtable(summary(aov_out)))
+
+# print means
+print(model.tables(aov_out,"means"), format="markdown")
+```
+
+### between-subjects 2 factor
+
+```{r}
+
+# run anova
+aov_out <- aov(DV~Factor1*Factor2, all_data)
+
+# summary
+summary(aov_out)
+
+# kable xtable printing
+library(xtable)
+knitr::kable(xtable(summary(aov_out)))
+
+# print means
+print(model.tables(aov_out,"means"), format="markdown")
+```
+
+### repeated-measures 1 factor
+
+```{r}
+
+# run anova
+aov_out <- aov(DV~Factor1 + Error(Subjects/Factor1), all_data)
+
+# summary
+summary(aov_out)
+
+# kable xtable printing
+library(xtable)
+knitr::kable(xtable(summary(aov_out)))
+
+# print means
+print(model.tables(aov_out,"means"), format="markdown")
+```
+
+
+### repeated-measures 2 factor
+
+```{r}
+
+# run anova
+aov_out <- aov(DV~Factor1*Factor2 + Error(Subjects/(Factor1*Factor2)), all_data)
+
+# summary
+summary(aov_out)
+
+# kable xtable printing
+library(xtable)
+knitr::kable(xtable(summary(aov_out)))
+
+# print means
+print(model.tables(aov_out,"means"), format="markdown")
+```
+
+### papaja
+
+```{r}
+library(papaja)
+
+apa_stuff <- apa_print.aov(aov_out)
+```
+
+The main effect for factor 1 was, `r apa_stuff$statistic$Factor1`. The main effect for factor 2 was, `r apa_stuff$statistic$Factor2`. The interaction was, `r apa_stuff$statistic$Factor1_Factor2`
+
+## Linear Regression
+
+```{r}
+lm(DV~Factor1, all_data)
+summary(lm(DV~Factor1, all_data))
+```
+
+```{r}
+lm(DV~Factor1+Factor2, all_data)
+summary(lm(DV~Factor1+Factor2, all_data))
+```
+
+```{r}
+lm(DV~Factor1*Factor2, all_data)
+summary(lm(DV~Factor1*Factor2, all_data))
+```
+
+
+
+
+
+## Randomization Test
+
+```{r}
+A <- c(1,2,3,4,5,6,7,8,9,10)
+B <- c(2,4,6,8,10,12,14,16,18,20)
+
+all <- c(A,B)
+
+mean_difference <- c()
+for(i in 1:10000){
+  shuffle <- sample(all)
+  newA <- shuffle[1:10]
+  newB <- shuffle[11:20]
+  mean_difference[i] <- mean(newB)-mean(newA)
+}
+
+observed <- mean(B)-mean(A)
+length(mean_difference[mean_difference >= observed])/10000
+
+library(EnvStats)
+
+twoSamplePermutationTestLocation(x=B, y=A, fcn = "mean", 
+                                 alternative = "greater", 
+                                 mu1.minus.mu2 = 0, 
+                                 paired = FALSE, 
+                                 exact = FALSE, 
+                                 n.permutations = 10000, 
+                                 seed = NULL, 
+                                 tol = sqrt(.Machine$double.eps))
+
+```
+
+## Correlation
+
+```{r}
+x <- rnorm(10,0,1)
+y <- rnorm(10,0,1)
+cor(x,y)
+
+ranks1 <- sample(1:10) 
+ranks2 <- sample(1:10)
+cor(ranks1,ranks2, method = "spearman")
+```
+
+## Chi-square
+
+```{r}
+M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))
+dimnames(M) <- list(gender = c("F", "M"),
+                    party = c("Democrat","Independent", "Republican"))
+(Xsq <- chisq.test(M))
+```
+
+## binomial test
+
+```{r}
+number_of_successes <- 100
+trials <- 150
+binom.test(x=number_of_successes, n=trials, p = 0.5,
+           alternative = "two.sided",
+           conf.level = 0.95)
+```
+
+## Post-hoc tests
+
+Many kinds of post-hoc tests can be done in R using base R functions, or functions from other packages. 
+
+At the same time, it is common for post-hoc comparison functions to be limited and specific in their functionality. So, if you can't find an existing function to complete the analysis you want, you may have to modify, extend, or write your own function to do the job. 
+
+### pairwise t-tests
+
+Performs all possible t-tests between the levels of a grouping factor. Can implement different corrections for multiple comparisons.
+
+```{r}
+df <- airquality #loads the airquality data from base R
+df$Month <- as.factor(df$Month)
+
+# default uses holm correction
+pairwise.t.test(df$Ozone,df$Month)
+
+# use bonferroni correction
+pairwise.t.test(df$Ozone,df$Month, p.adj="bonf")
+```
+
+### tukey HSD test
+
+notes: the warpbreaks data.frame should be available in base R, you do not need to load it to be able to use it.
+
+Doesn't work with repeated measures ANOVAs.
+
+```{r}
+summary(fm1 <- aov(breaks ~ wool + tension, data = warpbreaks))
+
+TukeyHSD(fm1, "tension", ordered = TRUE)
+```
+
+### Fishers LSD
+
+Explanation of Fisher's least significant difference test.
+[https://www.utd.edu/~herve/abdi-LSD2010-pretty.pdf](https://www.utd.edu/~herve/abdi-LSD2010-pretty.pdf)
+
+```{r}
+library(agricolae)
+
+data(sweetpotato)
+model <- aov(yield~virus, data=sweetpotato)
+out   <- LSD.test(model,"virus", p.adj="bonferroni")
+
+```
+
+## Linear Contrasts
+
+```{r}
+# Create data for a one-way BW subjects, 4 groups
+A <- rnorm(n=10, mean=100, sd=25)
+B <- rnorm(n=10, mean=120, sd=25)
+C <- rnorm(n=10, mean=140, sd=25)
+D <- rnorm(n=10, mean=80, sd=25)
+
+DV <- c(A,B,C,D)
+Conditions <- as.factor(rep(c("A","B","C","D"), each=10))
+df <- data.frame(DV,Conditions)
+
+# one-way ANOVA
+aov_out <- aov(DV~Conditions, df)
+summary(aov_out)
+
+# look at the order of levels
+levels(df$Conditions)
+
+# set up linear contrasts
+c1 <- c(.5, -.5, -.5, .5) # AD vs. BC
+c2 <- c(0, 0, 1, -1) # C vs. D
+c3 <- c(0, -1, 1, 0) # B vs. C
+
+# create a contrast matrix
+mat <- cbind(c1,c2,c3)
+
+# assign the contrasts to the group
+contrasts(df$Conditions) <- mat
+
+# run the ANOVA
+aov_out <- aov(DV~Conditions, df)
+
+# print the contrasts, add names for the contrasts
+summary.aov(aov_out, split=list(Conditions=list("AD vs. BC"=1, "C vs. D" = 2, "B vs. C"=3))) 
+```
+

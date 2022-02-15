@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Schedule</title>
+
+<script src="site_libs/header-attrs-2.5.3/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Psyc 7709</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="Schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="Videos.html">Videos</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="ExampleCode.html">ExampleCode</a>
+</li>
+<li>
+  <a href="Advanced.html">Package Notes</a>
+</li>
+<li>
+  <a href="MidtermAssignment.html">Midterm</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final</a>
+</li>
+<li>
+  <a href="book/docs/index.html">Our Book</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Schedule</h1>
+
+</div>
+
+
+<div id="getting-started" class="section level3">
+<h3>Getting Started</h3>
+<p>Before we meet for our first class there are few things you should try at home to get started.</p>
+<ol style="list-style-type: decimal">
+<li>Download and install R on your computer. This is the R website <a href="https://www.r-project.org">https://www.r-project.org</a></li>
+<li>Download and install R-studio. You must download and install R first before installing R-studio. The R-studio website is <a href="https://www.rstudio.com">https://www.rstudio.com</a></li>
+<li>Create a free github account. The github website is <a href="https://github.com">https://github.com</a></li>
+<li>Download and install github desktop <a href="https://desktop.github.com">https://desktop.github.com</a></li>
+<li>At this point you should have downloaded R and R-studio to your own computer. This will allow you to run R and R-studio locally. It is also possible to run R-studio in the cloud through your web-browser. To do this you need to create an account with R-studio cloud. Create an account here <a href="https://rstudio.cloud">https://rstudio.cloud</a>. <strong>Note:</strong> In class we will be using a computer lab wit R-studio installed on the computers. You will have the option of using the lab computer, or bringing your own laptop, and/or using R-studio through the cloud.</li>
+</ol>
+<p>Don’t worry if you ran into issues with these first steps, we will address them in class on Monday.</p>
+<p>If you have R-studio working is there anything else you can do before we meet for the first time on Monday? Yes.</p>
+<p>You can follow the video tutorial on creating an R markdown website with github pages on the video page. And, you can get started with some of the readings, and you can begin messing around in R. Here are some things to read:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html">Programming for Psychologists, Chapter 1</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/programming-in-r.html">Programming for Psychologists, Chapter 2</a></li>
+<li><a href="https://compcogscisydney.org/psyr/">Navarros’ Section 1: Core Toolkit</a></li>
+</ol>
+<p>We will be spending the first few weeks of the course working on solving different kinds of coding problems in R. These problems will help you learn the ins and outs of coding in R. You can get a head start by trying to solve the problems in this <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">list of programming challenges</a>.</p>
+</div>
+<div id="r-r-markdown-websites-github" class="section level3">
+<h3>1. R, R Markdown, Websites, &amp; Github</h3>
+<div id="overview" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Getting set-up with R, R-studio, using R-studio cloud, and Github.</li>
+<li>Follow a tutorial to create a free Github account, and then create a webpage using R Markdown and host it for free on Github. Students will use their personal website throughout the course as a mechanism for submitting assignments and to document their progress learning R.</li>
+<li>Introduction to basic programming concepts in R (variables, loops, logic, functions)</li>
+</ul>
+</div>
+<div id="readings-and-resources" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html">Programming for Psychologists, Chapter 1</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/programming-in-r.html">Programming for Psychologists, Chapter 2</a></li>
+<li><a href="https://compcogscisydney.org/psyr/">Navarros’ Section 1: Core Toolkit</a></li>
+</ol>
+</div>
+<div id="assignment-1-website" class="section level4">
+<h4>Assignment 1 (website)</h4>
+<p>Due date: M Feb 4th</p>
+<ol style="list-style-type: lower-alpha">
+<li>Create a website using R Markdown and host it on Github pages, then submit the link to your website on Blackboard for Assignment 1. We will create the website in class using this template <a href="https://github.com/CrumpLab/LabJournalWebsite">https://github.com/CrumpLab/LabJournalWebsite</a></li>
+<li>Edit and customize your website to make it your own. Edit the journal page and rename it to “R Basics”.</li>
+<li>Use the new “R Basics” .rmd file to begin working through the list of <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">programming challenges</a>. For each problem create a new header, briefly describe the problem, then create a code-block and write code to solve the problem.</li>
+<li>Throughout this course you will likely have many questions about how to solve different kinds of problems in R. We will use Github’s issues tracking feature as a way for everyone to post questions and solutions. Go to the github repository for this course <a href="https://github.com/CrumpLab/psyc7709">https://github.com/CrumpLab/psyc7709</a>. You will see an issue tab, with a “say hello” issue posted. Please add a comment to this issue so that I know that you can post issues. Then, if you have a question about R, please create a new issue. The entire class should be monitoring the posted issues, and anyone who knows an answer can respond with a comment.</li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="basic-programming-in-r-i" class="section level3">
+<h3>2. Basic Programming in R I</h3>
+<div id="overview-1" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Continue working on solving programming challenges</li>
+<li>More discussion on variable types in R, and using loops and logic to create simple algorithms.</li>
+<li>Overview of useful intrinsic functions in R</li>
+</ul>
+</div>
+<div id="readings-and-resources-1" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html">Programming for Psychologists, Chapter 1</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/programming-in-r.html">Programming for Psychologists, Chapter 2</a></li>
+<li><a href="https://compcogscisydney.org/psyr/">Navarros’ Section 1: Core Toolkit</a></li>
+</ol>
+</div>
+<div id="assignment-2-r-basics-i" class="section level4">
+<h4>Assignment 2 (R Basics I)</h4>
+<p>Due date: M Feb 11th</p>
+<ol style="list-style-type: lower-alpha">
+<li>Continue adding to your “R Basics” page to document progress in solving <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">programming challenges</a>. Upload link to website showing progress. Students to should attempt all of the simple programming challenges, and begin working on the harder problems. As you complete each problem it is a good idea to try and be creative by solving the problem in different ways. So, it is ok to have multiple solutions for each problem.</li>
+<li><strong>New</strong>: The new assignment for this week is to learn about existing functions in R, these are called R intrinsics. I have created an assignment worksheet with instructions, <a href="https://crumplab.github.io/psyc7709_2019/Presentations/RInstrinsics.html">https://crumplab.github.io/psyc7709_2019/Presentations/RInstrinsics.html</a>. The assignment contains a list of existing functions. Your task is to create a page on your website. Then, copy the list of functions from the assignment. For each function, you will write a brief description (only needs to be a sentence) of what it does, and then you will write a code chunk demonstrating that you can use the function. This will help you become familiar with existing functions that you can use. If you get stuck and are unable to figure out what a function does, post your question on the github issues tab for this course <a href="https://github.com/CrumpLab/psyc7709/issues">https://github.com/CrumpLab/psyc7709/issues</a>.</li>
+</ol>
+<p>tips: I added a video showing how to <a href="https://crumplab.github.io/psyc7709_2019/Videos.html#add_a_page_to_website">add a new page to your R markdown website</a></p>
+<hr />
+</div>
+</div>
+<div id="basic-programming-in-r-ii" class="section level3">
+<h3>3. Basic Programming in R II</h3>
+<div id="overview-2" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Continue working on solving programming challenges</li>
+<li>Writing functions in R</li>
+</ul>
+</div>
+<div id="readings-and-resources-2" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html">Programming for Psychologists, Chapter 1</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/programming-in-r.html">Programming for Psychologists, Chapter 2</a></li>
+<li><a href="https://compcogscisydney.org/psyr/">Navarros’ Section 1: Core Toolkit</a></li>
+</ol>
+</div>
+<div id="assignment-3-r-basics-ii" class="section level4">
+<h4>Assignment 3 (R Basics II)</h4>
+<p>Due date: M Feb 25th</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Last week to document progress in solving <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">programming challenges</a>. Upload link to website showing progress. Students should attempt and solve as many of the harder problems as they can.</p></li>
+<li><p>Create and share an R package containing custom functions on github. Follow the instructions in the <a href="https://crumplab.github.io/psyc7709_2019/Presentations/RPackages.html">R package assignment</a> that we will discuss in class. Upload the link to your new github repository containing your R package to blackboard.</p></li>
+</ol>
+<p>tips: I added a video showing how to <a href="https://crumplab.github.io/psyc7709_2019/Videos.html#publish_r_package_to_github">create a new R package and publish it to github.com</a></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><strong>NEW</strong> this an addition to your assignment not discussed in class. The assignment instructions are in the <a href="https://crumplab.github.io/psyc7709_2019/Presentations/Github.html">github assignment</a> document. This assignment gives you more practice using github features. You will be forking a repo, adding to the code, then making a pull-request to have your new changes be incorporated into the master repository. Also, you will be able to see other students solutions to two of the harder programming problems.</li>
+</ol>
+<p>tips: I added a video showing how to <a href="https://crumplab.github.io/psyc7709_2019/Videos.html#fork_a_repo_and_make_a_pull_request">fork and make a pull request</a></p>
+<hr />
+</div>
+</div>
+<div id="data-visualization" class="section level3">
+<h3>4. Data-Visualization</h3>
+<div id="overview-3" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Introduction to the grammar of graphics ggplot2 package for data-visualization</li>
+</ul>
+</div>
+<div id="readings-and-resources-3" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://ggplot2.tidyverse.org">ggplot2 reference website</a></li>
+<li><a href="https://r4ds.had.co.nz/data-visualisation.html">Hadley Wickham’s, R for Data Science, Chapter 3 Data visualization</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot2 cheatsheet</a></li>
+</ol>
+</div>
+<div id="assignment-4-data-vis" class="section level4">
+<h4>Assignment 4 (Data-Vis)</h4>
+<p>Your assignment is to practice making graphs in ggplot2. <a href="https://crumplab.github.io/psyc7709_2019/Presentations/DataVis.html">Click this link to see the assignment instructions</a>. You will be making a new R markdown page documenting your code for making graphs in the assignment. Load this page onto your website, then submit the link to the page on blackboard.</p>
+<p>Due date: M Mar 4th</p>
+<hr />
+</div>
+</div>
+<div id="data-wrangling" class="section level3">
+<h3>5. Data-Wrangling</h3>
+<p>We had a snow day for this class. Here is a short video tutorial to help you get started and complete the assignment for this week. We will go over everything here next class as well.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5PdHgYpM-1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<div id="overview-4" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Loading Data into R</li>
+<li>Data formatting (dataframes and data.tables)</li>
+<li>Introduction to the dplyr package for filtering, selecting, augmenting, and summarizing data sets (and more).</li>
+</ul>
+</div>
+<div id="resources" class="section level4">
+<h4>Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://dplyr.tidyverse.org">Dplyr reference</a></li>
+<li><a href="http://r4ds.had.co.nz/transform.html">Hadley Wickham’s, R for Data Science, Chapter 5 Data transformation</a></li>
+<li><a href="https://resources.rstudio.com/rstudio-cheatsheets/data-import-cheat-sheet">Data import Cheatsheet</a></li>
+</ol>
+</div>
+<div id="assignment-5-data-wrangling" class="section level4">
+<h4>Assignment 5 (Data-Wrangling)</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangling.html">Class notes on Data-wrangling</a></li>
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleExampleStroop.html">Example R Markdown analysis report</a></li>
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleFlanker_student.Rmd">Your Rmarkdown Assignment</a> This links to the .rmd file, that you can use as a template to complete the assignment. Using this template file, create a new page on your website, and submit the link</li>
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleFlanker.html">Answer sheet for assignment</a> You can use this to check your work. If you don’t get the same numbers, then one of us did something wrong.</li>
+</ol>
+<p>Due date: M Mar 18th</p>
+<hr />
+</div>
+</div>
+<div id="common-inferential-tests" class="section level3">
+<h3>6. Common inferential tests</h3>
+<div id="overview-5" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>t-tests, anovas, and linear regresssion, and more in R</li>
+<li>Using R to simulate null-hypotheses</li>
+<li>Overview and discussion of midterm project (three parts due over the next three weeks)</li>
+</ul>
+</div>
+<div id="readings-and-resources-4" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/Statistics.html">Class notes on Statistics</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/simulating-and-analyzing-data-in-r.html">Matthew Crump’s, Programming for Psychologists, chapter 5</a></li>
+</ol>
+</div>
+<div id="assignment-6-stats" class="section level4">
+<h4>Assignment 6 (Stats)</h4>
+<ul>
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/StatisticsAssignment.html">Statistics Assignment</a>, due M Mar 25th
+<ul>
+<li>This assignment asks you to simulate the null hypothesis in various ways using R.</li>
+</ul></li>
+<li>The <a href="https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html">midterm project</a> begins this week (due aprill 8th)</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="apa-papers-using-papaja" class="section level3">
+<h3>7. APA papers using Papaja</h3>
+<div id="overview-6" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Introduction to creating reproducible APA manuscripts using the papaja package. Students learn how to use the template for writing an APA report in R Markdown, which allows them to embed their R-scripts for data-analysis into the manuscript, allowing others to reproduce their analysis.</li>
+<li>Midterm project continued</li>
+</ul>
+</div>
+<div id="readings-and-resources-5" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/papaja.html">Installing papaja</a></li>
+<li><a href="https://crsh.github.io/papaja_man/">Frederick Aust &amp; Marius Barth’s papaja package: Reproducible APA manuscripts with R Markdown</a></li>
+</ol>
+</div>
+<div id="midterm-assignment-due-m-april-8th" class="section level4">
+<h4>Midterm Assignment (due M April 8th)</h4>
+<p><a href="https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html">midterm project</a></p>
+<ul>
+<li>part 1: Reproducible Report</li>
+<li>part 2: Convert to APA-style report using papaja</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="data-simulation" class="section level3">
+<h3>8. Data simulation</h3>
+<div id="overview-7" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Simulating data from scratch, and using monte-carlo methods for power analysis and sample-size planning.</li>
+</ul>
+</div>
+<div id="readings-and-resources-6" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/Simulation.html">Class notes on simulation</a></li>
+<li><a href="https://crumplab.github.io/programmingforpsych/simulating-and-analyzing-data-in-r.html">Matthew Crump’s, Programming for Psychologists, chapter 5</a></li>
+</ol>
+</div>
+<div id="midterm-assignment-due-m-april-8th-1" class="section level4">
+<h4>Midterm Assignment (due M April 8th)</h4>
+<p><a href="https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html">midterm project</a></p>
+<ul>
+<li>part 3: Simulation based power anlaysis</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="shiny-web-apps" class="section level3">
+<h3>9. Shiny Web Apps</h3>
+<div id="overview-8" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Introduction to R Shiny for building interactive web-applications</li>
+</ul>
+</div>
+<div id="readings-and-resources-7" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/Shiny_tutorial.html">Class Notes on Shiny</a></li>
+<li><a href="https://shiny.rstudio.com/tutorial/#written-tutorials">R shiny tutorials</a></li>
+</ol>
+</div>
+<div id="assignment-7-shiny" class="section level4">
+<h4>Assignment 7 (Shiny)</h4>
+<ol style="list-style-type: decimal">
+<li>Make a R shiny app (it can do whatever you want to make).</li>
+<li>Host the app as a folder on Github, or upload to <a href="https://www.shinyapps.io">shinyapps.io</a> cloud server (need to create free account).</li>
+<li>Submit link on Blackboard</li>
+</ol>
+<p>Due date: M Apr 15th</p>
+<hr />
+</div>
+</div>
+<div id="optimizing-r-scripts" class="section level3">
+<h3>10. Optimizing R scripts</h3>
+<div id="overview-9" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Principles of scripting for efficient memory management, including using profiles packages for determining which parts of a script can be further optimized. Discussion of vectorization in R.</li>
+</ul>
+</div>
+<div id="readings-and-resources-8" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://crumplab.github.io/psyc7709_2019/Presentations/Optimization.html">Class notes on optimization</a></li>
+<li><a href="http://adv-r.had.co.nz/Profiling.html">Hadley Wickham’s, Advanced R, profiling chapter</a></li>
+</ol>
+</div>
+<div id="assignment-7-optimization" class="section level4">
+<h4>Assignment 7 (Optimization)</h4>
+<p>No Assignment</p>
+<hr />
+</div>
+</div>
+<div id="open-science-and-final-project-planning" class="section level3">
+<h3>11. Open science and Final Project planning</h3>
+<div id="overview-10" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Open science and transparency.</li>
+</ul>
+</div>
+<div id="readings-and-resources-9" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="http://adv-r.had.co.nz/Profiling.html">Hadley Wickham’s, Advanced R, profiling chapter</a></li>
+</ol>
+</div>
+<div id="final-project" class="section level4">
+<h4>Final Project</h4>
+<p>Presentation due: M May 15th Paper due date: M May 20th</p>
+<hr />
+</div>
+</div>
+<div id="r-markdown-presentations" class="section level3">
+<h3>12. R Markdown Presentations</h3>
+<div id="overview-11" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Using R Markdown and the xaringan package to compile R Markdown documents into slide presentations for the web.</li>
+</ul>
+</div>
+<div id="readings-and-resources-10" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://rmarkdown.rstudio.com/lesson-11.html">R markdown slide presentations tutorial</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html">Yihui Xie, J. J. Allaire, &amp; Garrett Grolemund’s “R Markdown: The Definitive guide”, Chapter 7</a></li>
+<li><a href="https://crumplab.github.io/psyc7709_2019/FinalPresentation/RPackagePresentation.html#1">example presentation</a></li>
+</ol>
+</div>
+<div id="final-project-1" class="section level4">
+<h4>Final Project</h4>
+<p>Presentation due: M May 15th Paper due date: M May 20th</p>
+<hr />
+</div>
+</div>
+<div id="r-markdown-books" class="section level3">
+<h3>13. R Markdown books</h3>
+<div id="overview-12" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Introduction to using the R Markdown format to compile documents into web-books, .pdf’s, and epubs using the bookdown package.</li>
+</ul>
+</div>
+<div id="readings-and-resources-11" class="section level4">
+<h4>Readings and Resources</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://bookdown.org/yihui/rmarkdown/books.html">Yihui Xie, J. J. Allaire, &amp; Garrett Grolemund’s “R Markdown: The Definitive guide”, Chapter 12</a></li>
+</ol>
+</div>
+<div id="final-project-2" class="section level4">
+<h4>Final Project</h4>
+<p>Presentation due: M May 15th Paper due date: M May 20th</p>
+<hr />
+</div>
+</div>
+<div id="presentations" class="section level3">
+<h3>14. Presentations</h3>
+<div id="overview-13" class="section level4">
+<h4>Overview</h4>
+<ul>
+<li>Final Project individual presentations</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="final-project-3" class="section level3">
+<h3>15. Final project</h3>
+<div id="overview-14" class="section level4">
+<h4>Overview</h4>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

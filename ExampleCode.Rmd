@@ -1,0 +1,671 @@
+---
+title: "Example Code"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message = FALSE)
+```
+
+## Loops
+
+Check R help for on Control Flow `?Control`.
+
+`for(){}`
+`for(loop control){do something each iteration}`
+
+```{r, eval=F}
+for(iterator in vector){
+  #do something
+}
+```
+
+Loop control is defined in between the parentheses. The name of the iterator is placed on the left of `in`(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of `in`. Specifically, the following is happening.
+
+Loop steps: 
+  1. iterator <- vector[1]
+  2. iterator <- vector[2]
+  3. iterator <- vector[3]
+  4. etc.
+  
+The loop will automatically stop once it reaches the last item in the vector. The loop can be stopped before that using the `break` command.
+
+```{r}
+# Make a loop do something 5 times
+# i is the iterator
+# 1:5 creates a vector with 5 numbers in it, 1, 2, 3, 4, 5
+# the loop will run 5 times, because there are five things to assign to i
+for(i in 1:5){
+  print(5)
+}
+```
+
+```{r}
+# show the value of i each step of the loop
+for(i in 1:5){
+  print(i)
+}
+
+```
+
+```{r}
+# define the vector to loop over in advance
+my_sequence <- 1:5
+for(i in my_sequence){
+  print(i)
+}
+```
+
+```{r}
+# Reminder that i becomes the next value in the vector
+# your vector can have any order 
+my_sequence <- c(1,5,2,3,4)
+for(i in my_sequence){
+  print(i)
+}
+```
+
+```{r}
+# index vector does not need to be numbers
+my_things <- c("A","B","C","D")
+for(i in my_things){
+  print(i)
+}
+```
+
+### Breaking a loop
+
+`break` stops a loop. Used with logical statements to define the conditions necessary to cause the break.
+
+```{r}
+for(i in 1:10){
+  if(i <5){
+    print(i)
+  } else{
+    break
+  }
+}
+```
+
+### While loops
+
+While loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met. 
+
+This one prints i while i is less than 6. As soon as i becomes "not less than 6", then the loop stops. Critically, inside the loop, the value of i increases each iteration. 
+
+```{r}
+i <- 1 # create an variable
+while (i < 6) {
+  print(i)
+  i = i+1 #add one eachs step of the loop
+}
+```
+
+### Repeat loops
+
+Similar to while, but let's do things until a condition is met.
+
+```{r}
+i<-0
+repeat{
+  i<-i+1
+  print(i)
+  if(i==5){
+    break
+  }
+}
+```
+
+
+### Examples
+
+Braces are not needed on one line
+
+```{r}
+for(i in 1:5) print(i)
+```
+
+Using the value of the iterator to assign in values systematically to another variable.
+
+```{r}
+# put 1 into the first five positions of x
+x <- c() # create empty vector
+for(i in 1:5){
+  x[i] <- 1  # assign 1 to the ith slot in x
+}
+x
+
+# put the numbers 1-5 in the first 5 positions of x
+x <-c()
+for(i in 1:5){
+  x[i] <- i
+}
+x
+```
+
+Make your own counter, when you need one
+
+```{r}
+a <- c(1,4,3,5,7,6,8,2)
+odd <- c()
+counter <- 0
+for(i in a){  # i will the values of a in each position
+  counter <- counter+1
+  if(i%%2 != 0){
+    odd[counter] <- "odd"
+  } else {
+    odd[counter] <- "even"
+  }
+}
+odd
+
+# An alternative strategy
+
+a <- c(1,4,3,5,7,6,8,2)
+odd <- c()
+# 1:length(a) creates a sequence from 1 to length
+for(i in 1:length(a)){  
+  if(a[i]%%2 != 0){
+    odd[i] <- "odd"
+  } else {
+    odd[i] <- "even"
+  }
+}
+odd
+
+```
+
+Nesting loops
+
+```{r}
+
+for(i in 1:5){
+  for(j in 1:5){
+   print(c(i,j))
+  }
+}
+
+# example of using nested loops to fill the contents
+# of a matrix
+
+my_matrix <- matrix(0,ncol=5,nrow=5)
+for(i in 1:5){
+  for(j in 1:5){
+   my_matrix[i,j] <- i*j
+  }
+}
+my_matrix
+
+```
+
+break exits out of the immediate loop
+
+```{r}
+# the inside loop stops when i+j is greater than 5
+# the outside loop keeps going
+
+sum_of_i_j <- c()
+counter <- 0
+for(i in 1:5){
+  for(j in 1:5){
+    counter <- counter+1
+    sum_of_i_j[counter] <- i+j
+    if(i+j > 5){
+      break
+    }
+  }
+}
+sum_of_i_j
+```
+
+
+## Logical comparison
+
+Logic statements are used to compare two things, or two sets of things. The output of comparison is a TRUE or FALSE statment. If many things are being compared at once, the output could be many TRUE or FALSE statements for each comparison
+
+### equal to
+
+```{r}
+1==1 # is 1 equal to 1?
+1==2 # is 1 equal to 2?
+
+c(1,2,3) == c(2,1,3) # compares each element with each element
+1 == c(2,1,3)
+```
+
+### not equal to
+
+```{r}
+1!=1 # is 1 equal to 1?
+1!=2 # is 1 equal to 2?
+
+c(1,2,3) != c(2,1,3) # compares each element with each element
+1 != c(2,1,3)
+```
+
+### Greater than/ less than
+
+```{r}
+
+1 > 1 # is 1 greater than 1?
+5 > 1 # is 5 greater than 1?
+3 < 2 # is 3 less than 2?
+3 < 1 # is 3 less than 1?
+
+c(1,2,3) > c(2,1,3) # ask the question element by element
+c(1,2,3) < c(2,1,3)
+
+2 > c(1,2,3) # is greater than each of the numbers
+```
+
+### >= <=
+
+Is something greater than or equal to something else
+
+```{r}
+1 >= 1 # is 1 greater than 1?
+5 >= 1 # is 5 greater than 1?
+3 <= 2 # is 3 less than 2?
+3 <= 1 # is 3 less than 1?
+
+c(1,2,3) >= c(2,1,3) # ask the question element by element
+c(1,2,3) <= c(2,1,3)
+
+2 >= c(1,2,3) # is greater than each of the numbers
+```
+
+### AND
+
+The ampersand `&` is used for AND, which allows use to evaluate whether two or more properties are all TRUE.
+
+```{r}
+# is 16 divisible by 4 AND 8
+16%%4 == 0 & 16%%8 ==0
+
+# is 16 divisible by 4 AND 3
+16%%4 == 0 & 16%%3 ==0
+
+# is 16 divisible by 8 and 4 and 2
+16%%4 == 0 & 16%%8 ==0 & 16%%2 ==0
+```
+
+### OR
+
+The `|` is used for OR, which allows use to evaluate at least one of the properties is TRUE.
+
+```{r}
+# is 16 divisible by 4 OR 8
+16%%4 == 0 | 16%%8 ==0
+
+# is 16 divisible by 4 OR 3
+# it is divisible by 4, so the answer is TRUE
+# because at least one of the comparisons is TRUE
+16%%4 == 0 | 16%%3 ==0
+```
+
+### TRUE FALSE
+
+When R returns values as TRUE or FALSE, it return a logical variable. It also treats TRUE as a 1, and FALSE as a 0. In the example below we see it is possible sum up a logical variable with multiple TRUE and FALSE entries.
+
+```{r}
+c(1,2,3) == c(1,2,3)
+sum(c(1,2,3) == c(1,2,3))
+
+c(1,2,3) == c(2,1,3)
+sum(c(1,2,3) == c(2,1,3))
+```
+
+
+## IF ELSE
+
+A carnival operator needs to check if people are taller than a line to see if they can ride the ride. Every time someone goes through the gate, they run an IF ELSE control structure in their head. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride. 
+
+In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different.
+
+IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something.
+
+Consider this:
+
+```{r}
+a <- 1 # define a to be a 1
+if(a==1){  
+  print(a) # this is what happens if a==1
+} else {
+  print("A is not 1") # this is what happens if a is not 1
+}
+
+
+a <- 2 # define a to be a 1
+if(a==1){  
+  print(a) # this is what happens if a==1
+} else {
+  print("A is not 1") # this is what happens if a is not 1
+}
+```
+
+Normally we find IF and ELSE in a loop like this:
+
+```{r}
+a <- c(1,0,1,0,0,0,1) # make a variable contain 1s and 0s
+
+# write a loop to check each element in the variable
+# and do different things depending on the element
+
+for(i in a){
+  if(i == 1){
+    print("I'm a 1") # what to do when i is 1
+  } else {
+    print("I'm not a 1") # what to do when i is not 1
+  }
+}
+
+```
+
+We can have multiple conditions in our if statements. 
+
+```{r}
+a <- c(1,2,3,1,2,0,1) # make a variable contain 1s and 0s
+
+# write a loop to check each element in the variable
+# and do different things depending on the element
+
+for(i in a){
+  if(i == 1){
+    print("I'm a 1") # what to do when i is 1
+  } else if (i==2){
+    print("I'm a 2") # what to do when i is 2
+  } else if (i==3){
+    print("I'm a 3") # what to do when i is 3
+  } else {
+    print("I'm not any of the above") #what to do when none are true
+  }
+}
+
+```
+
+## Functions
+
+This section discusses the syntax for writing custom functions in R.
+
+### function syntax
+
+```{r, eval=FALSE}
+function_name <- function(input1,input2){
+  #code here
+  return(something)
+}
+```
+
+### example functions
+
+This function has no input between the `()`. Whenever you run this function, it will simply return whatever is placed inside the `return` statement.
+
+```{r}
+# define the function
+print_hello_world <- function(){
+  return(print("hello world"))
+}
+
+# use the function
+print_hello_world()
+```
+
+This function simply takes an input, and then returns the input without modifying it. 
+
+```{r}
+return_input <- function(input){
+  return(input)
+}
+
+# the variable input is assigned a 1
+# then we return(input), which will result in a 1
+# because the function internally assigns 1 to the input
+return_input(1)
+
+a <- "something"
+return_input(a)
+```
+
+This function takes an input, then creates an internal variable called temp and assigns input+1. Then the contents of temp is returned. Note there, is no checking of the input, so it will return an erro if you input a character (can't add one to a character in R)
+
+```{r, error=TRUE}
+add_one <- function(input){
+  temp <- input+1
+  return(temp)
+}
+
+add_one(1)
+add_one("a")
+```
+
+This function adds some input checking. We only add one if the input is a numeric type. Otheriwse, we use `stop()` to return an error message to the console
+
+```{r, error=TRUE}
+add_one <- function(input){
+  if(class(input) == "numeric"){
+    temp <- input+1
+    return(temp)
+  } else {
+    return(stop("input must be numeric"))
+  }
+}
+
+add_one(1)
+add_one("a")
+```
+
+A function with three inputs
+
+```{r}
+add_multiply <- function(input, x_plus,x_times){
+  temp <- (input+x_plus)*x_times
+  return(temp)
+}
+
+# input is 1
+# x_plus <- 2
+# x_times <- 3
+# will return (1+2)*3 = 9
+add_multiply(1,2,3)
+
+
+```
+
+## Vectorized approaches
+
+Loops are a common tool for doing something many times. R can accomplish the goal of "doing something many times" without loops, using a vectorized approach. 
+
+### Basic examples
+
+Let's take a close look at some very basic differences between using a loop, and using R's vectorized approach
+
+Consider the problem of adding a single number to all of the numbers in a vector.
+
+```{r}
+nums <- c(1,2,3,4)
+
+# vectorized approach
+# R automatically adds 1 to all of the numbers
+nums+1
+
+# loop approach
+# much longer to write out
+for(i in 1:length(nums)){
+  nums[i] <- nums[i]+1
+}
+nums
+```
+
+How about adding two vectors together, so we add the first two numbers together, then the second two numbers etc.
+
+```{r}
+A <- c(1,2,3,4)
+B <- c(1,2,3,4)
+
+# vectorized approach
+A+B
+
+# loop approach
+the_sum <-c()
+for(i in 1:length(A)){
+  the_sum[i] <- A[i]+B[i]
+}
+the_sum
+```
+
+How about comparing the identity of the elements in two vectors to see if they are the same or not?
+
+```{r}
+A <- c("c","e","f","g")
+B <- c("d","e","f","g")
+
+#vectorized approach
+A==B
+
+# loop approach
+compared <-c()
+for(i in 1:length(A)){
+  if(A[i]==B[i]){
+    compared[i] <- TRUE
+  } else {
+    compared[i] <- FALSE
+  }
+}
+compared
+```
+
+
+
+### Replicate
+
+`replicate(n, expr)` allows you to repeat a function many times, and return the answer in a vector
+
+
+```{r}
+# returns 1 randomly sampled number from 1 to 10
+sample(1:10,1)
+
+# let's repeat the above 10 times using replicate
+replicate(10,sample(1:10,1))
+```
+
+The next example shows how to write a function to do something, and then use the function inside replicate to repeat the function many times. 
+
+For example, we write a function to run a one-sample t-test on a random sample drawn from a normal distribution
+
+```{r}
+ttest_result <- function(){
+  sample <- rnorm(10,0,1)
+  t_out <- t.test(sample, mu=0)
+  return(t_out$statistic)
+}
+
+# get 10 t-values from repeating the above 10 times
+replicate(10, ttest_result() )
+```
+
+### apply family
+
+The `apply` family of functions can be used to "apply" a function across elements of an object. A general overview can be found [here](https://www.datacamp.com/community/tutorials/r-tutorial-apply-family) 
+
+Some of the apply functions include: `apply()`, `lapply`, and `sapply`.
+
+### lapply and sapply
+
+Here is part of the definition of lapply from the help file:
+
+lapply returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.
+
+Let's see some examples:
+
+Let's apply a function to each of the elements in a vector. To keep things simple, our function will add 1 to a number
+```{r}
+some_numbers <- c(1,2,3,4)
+
+add_one <- function(x){
+  return(x+1)
+}
+
+# returns a list, containing the answers
+lapply(some_numbers, add_one)
+
+# unlists the list
+unlist(lapply(some_numbers,add_one))
+
+# sapply does the unlisting for you
+sapply(some_numbers, add_one)
+```
+
+An alternative syntax for lapply and sapply let's you define the function you want to apply inside the `lapply` or `sapply` function.
+
+In this case, each element in the vector `some_numbers` will become the `x` value in the function.
+
+```{r}
+some_numbers <- c(1,2,3,4)
+
+lapply(some_numbers, FUN = function(x){x+1})
+sapply(some_numbers, FUN = function(x){x+1})
+```
+
+
+### apply
+
+The `apply` function can be used on 2-dimensional data, and allows you to apply a function across the rows or the columns of the data.
+
+Let's say you had a 5x5 matrix of random numbers. Let's find the sum of each row
+
+```{r}
+random_matrix <- matrix(sample(1:10,25, replace=TRUE),ncol=5)
+
+# applies the sum function to each row
+# 1 tells apply to go across rows
+apply(random_matrix,1,sum)
+```
+
+The sum of each column
+
+```{r}
+# applies the sum function to each column
+# 2 tells apply to go across columns
+apply(random_matrix, 2, sum)
+```
+
+Let's say we have a matrix storing 3 samples. Each sample has 10 numbers. Each sample is stored in a column, and each row represents an observation.
+
+```{r}
+sample_matrix <- matrix(rnorm(30,0,1),ncol=3)
+```
+
+Let's use apply to conduct 10 one-sample t-tests, one for each column. In this example, we can pass the `mu=0` parameter into the `t.test` function. However, we will return the entire ouput of each t-test in a list.
+
+```{r}
+apply(sample_matrix,2,t.test, mu=0)
+```
+
+What if we wanted to return only the t-values, rather than whole output?
+
+You might try this, but it doesn't work
+```{r, error=TRUE}
+apply(sample_matrix,2,t.test$statistic, mu=0)
+```
+
+So, we write a custom function
+
+```{r}
+apply(sample_matrix, 2, 
+      FUN = function(x){
+        t_out <- t.test(x,mu=0)
+        return(t_out$statistic)
+      })
+```
+
+
+
+
+

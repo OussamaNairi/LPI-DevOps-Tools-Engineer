@@ -1,0 +1,42 @@
+--- 
+title: "Using R for Reproducible Research: Student contributed tutorials"
+author: "Matthew Crump"
+date: "2018: Last compiled `r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    toc_depth: 1
+    includes:
+      in_header: includeme.html
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: CrumpLab/OER_bookdown
+description: "Student contributed chapters about various R packages"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE, error=TRUE)
+library(ggplot2)
+```
+
+
+# Preface {-}
+
+```{r,echo=F,fig.align="center",eval=T, fig.width=5}
+knitr::include_graphics("OER.png")
+```
+
+These chapters were written by students in PSYC 7709: Using R for Reproducible research in Spring 2019 @ Brooklyn College of CUNY, as a final project to write a tutorial about an R package. 
+
+**Citation**
+
+Abdelrahman, K., Contreras, A., Degtyarev, Z., Deng, J., Foster, J., Franz, A., Funderburk, T., Horger, M., Kravitz, J., Lakshin A., Manigat, M., Trois, R., Vasquez, A., Vo, A., Wilson, N., and Yeremenko, M. (2019). Using R for Reproducible Research: Student Contributed Tutorials. (M. J. C. Crump, Ed.). 
+
+**License CC BY-SA 4.0 license**
+
+The book is released under a creative commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. This means that this book can be reused, remixed, retained, revised and redistributed (including commercially) as long as appropriate credit is given to the authors. If you remix, or modify the original version of this open textbook, you must redistribute all versions of this open textbook under the same license - CC BY-SA 4.0.
+
+
+

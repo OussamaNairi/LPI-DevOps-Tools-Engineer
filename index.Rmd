@@ -1,5 +1,5 @@
 ---
-title: "MyLabJournal"
+title: "Psyc 7709"
 output: html_document
 ---
 
@@ -17,27 +17,20 @@ output: html_document
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **My Lab Journal**
+# **Psyc 7709**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.
+### *Using R for Reproducible research* {style="padding-top: 0px;"}
 
-## How to use
+This is the course website for Psyc 7709: Using R for Reproducible research (Spring 2019), offered through the Experimental Psychology Master's program, Department of Psychology, Brooklyn College of CUNY.
 
-1. fork the repo for this website and follow instructions on read me to get set up. [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
-
-2. Blog/journal what you are doing in R, by editing the Journal.Rmd. See the [Journal page](https://crumplab.github.io/LabJournalWebsite/Journal.html) for an example of what to do to get started learning R.
-
-3. See the [links page](https://crumplab.github.io/LabJournalWebsite/Links.html) for lots of helpful links on learning R.
-
-4. Change everything to make it your own.
+Instructor: Matthew Crump [mcrump@brooklyn.cuny.edu](mcrump@brooklyn.cuny.edu)
 
 
 </div>
 <div class="col-sm-6">
 
-### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io)
+![](images/RStudio.png)
 
-<a href = "https://crumplab.github.io">
-![](images/logo.png)
-</a>
 </div>
+</div>
+

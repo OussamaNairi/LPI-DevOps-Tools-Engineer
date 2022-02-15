@@ -1,0 +1,75 @@
+---
+title: "Videos"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### R markdown website and github pages
+
+A quick example of forking a repository with code to run an R markdown website to your github account. Then cloning the repo to your local computer, making a few changes, and pushing the changes back to Github so you can update your website
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nc7XhQrasCM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Quick look at R and R-studio
+
+Shows the difference between R (which just loads a console), and R-studio. Brief discussion of the different panels of R-studio, creating a new .R file, running a bit of code, and creating and knitting an R Markdown file.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HTJ-bTD70oE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### R markdown template
+
+Discussion of the basic R markdown template in R-studio.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PyEkQo9URi8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Solving basic programming problems
+
+The assignment for the first few weeks of the course is to document your progress solving some programming problems in R. You will be editing an .rmd file on your webpage, and submitting the link to your page each week. Here is a brief tutorial showing you how to get started.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/25uuRq-4oFM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Another sample problem
+
+In this screen cast we solve the following problem: Generate 100 random numbers between 1 to 100. Find only the numbers that are greater than 50, then add up those selected numbers. The general goal is to see some examples of using variables, logic, and loops to write a script, and finally to put the algorithm into a more general function.
+
+The .rmd for this tutorial is here: [https://crumplab.github.io/psyc7709_2019/Presentations/sampleproblem.html](https://crumplab.github.io/psyc7709_2019/Presentations/sampleproblem.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RhVZy1vw2iQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### find the longest word
+
+We solve the following problem: Given a sentence find and return the longest word in the sentence. 
+
+The .rmd for this tutorial is here: [https://crumplab.github.io/psyc7709_2019/Presentations/LongestWord.html](https://crumplab.github.io/psyc7709_2019/Presentations/LongestWord.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qNJNQH1nAlg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Add a page to website
+
+How to add a new page to your R markdown website
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gHVXQMtegzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Publish R package to github
+
+Follow these steps to create a new package in R-studio, save it is a git repository, add the repository to github desktop, and then use github desktop to publish to github.com
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XbSwdHBiO4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Fork a repo and make a pull request
+
+As part of the assignment due Feb 25th, you will be forking a repository to your github account, cloning it to your computer, adding some code to the .Rmd files in the repository, then pushing those changes back to your version of the repository, and finally making a pull-request that those changes be incoporated into the original repository. Here is a screencast showing how to do these steps.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oGKpO_Zy0vo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

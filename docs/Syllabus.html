@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Syllabus</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Psyc 7709</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="Schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="Videos.html">Videos</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="ExampleCode.html">ExampleCode</a>
+</li>
+<li>
+  <a href="Advanced.html">Package Notes</a>
+</li>
+<li>
+  <a href="MidtermAssignment.html">Midterm</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final</a>
+</li>
+<li>
+  <a href="book/docs/index.html">Our Book</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Syllabus</h1>
+
+</div>
+
+
+<div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
+<h3>PSYC 7709 – Using R for Reproducible Psychological Research (Special Topics)</h3>
+<p>Spring 2019</p>
+<p>Location: 5201 James Hall Time: Monday 3:40pm-6:25pm</p>
+<p>Instructor: Matthew Crump, <a href="mcrump@brooklyn.cuny.edu">mcrump@brooklyn.cuny.edu</a></p>
+</div>
+<div id="general-course-description-and-objectives" class="section level3">
+<h3>General Course Description and Objectives</h3>
+<p>Practical and skill-focused introduction to using open-source programming software (R, R-studio, and R Markdown) in several aspects of Psychological Research. Course covers basic scripting/coding in R, data-wrangling, advanced graphing and data animation, using R for creating reproducible manuscripts, slide presentations, websites, and web-books for communicating research.</p>
+<p>Special Prerequisites: NONE</p>
+<p>*Course objectives**: in this course you will learn:</p>
+<ol style="list-style-type: decimal">
+<li>Basic scripting in R: use of variables, logic, loops, functions, intrinsics, packages, workspaces</li>
+<li>Data transformation: processing data-files into a desired form for a desired analysis</li>
+<li>Data visualization: advanced plotting and graphing of data, creation of journal-quality figures in R.</li>
+<li>Data Simulation: how to create statistical models of data sets for advanced sample-size planning, as well as evaluating existing findings in the literature.</li>
+<li>Communicating research: how to use R Markdown scripts to create APA style manuscripts, websites, web-books, and web-based presentations for communicating research.</li>
+<li>Reproducible research: principles of open-science, including tools for data-sharing, manuscript sharing, pre-registration of research designs, method-sharing, pre-print sharing, and use of online repository services for disseminating shared materials.</li>
+</ol>
+</div>
+<div id="course-structure" class="section level3">
+<h3>Course Structure</h3>
+<p>We meet once per week in a computer lab. Each class will involve a small amount of lecturing on R concepts, and a large amount of time for students to complete coding and analysis problems assigned on a weekly basis. By completing the assignments, students will create a coding portfolio demonstrating a variety of data-analysis and communication skills. The process of learning to code is one that involves patience, time, and practice. Students are expected to practice coding outside of class time each week.</p>
+</div>
+<div id="lecture-schedule" class="section level3">
+<h3>Lecture Schedule</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Week
+</th>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Topic
+</th>
+<th style="text-align:left;">
+Assignments
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Before class
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#getting_started">Getting Started</a>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+M Jan 28
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#1_r,_r_markdown,_websites,__github">Introduction to R Markdown</a>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+M Feb 4
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#2_basic_programming_in_r_i">Basic Programming in R I</a>
+</td>
+<td style="text-align:left;">
+week I due (website)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+M Feb 11
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#3_basic_programming_in_r_ii">Basic Programming in R II</a>
+</td>
+<td style="text-align:left;">
+week 2 due (basics I)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<strong>M Feb 18</strong>
+</td>
+<td style="text-align:left;">
+No Class
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+M Feb 25
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#4_data-visualization">Data-Visualization</a>
+</td>
+<td style="text-align:left;">
+week 3 due (basics II)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+M Mar 4
+</td>
+<td style="text-align:left;">
+Snow day (make up W May 15th)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+M Mar 11
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#5_data-wrangling">Data-Wrangling</a>
+</td>
+<td style="text-align:left;">
+week 4 due (data-vis)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+M Mar 18
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#6_common_inferential_tests">Common inferential tests</a>
+</td>
+<td style="text-align:left;">
+week 5 due (data-wrangling)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+M Mar 25
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#8_apa_papers_using_papaja">APA Papers with papaja</a>
+</td>
+<td style="text-align:left;">
+week 6 due (stats)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+M Apr 1
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#7_data_simulation">Data Simulation</a>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+M Apr 8
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#9_shiny_web_apps">Shiny Web Apps</a>
+</td>
+<td style="text-align:left;">
+Midterm project due
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+M Apr 15
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#10_optimizing_r_scripts">Optimizing R Scripts</a>
+</td>
+<td style="text-align:left;">
+week 9 due (shiny)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+M Apr 22
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#11_open_science_and_final_project_planning">Open Science and Final project planning</a>
+</td>
+<td style="text-align:left;">
+week 10 due (optimization)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+M Apr 29
+</td>
+<td style="text-align:left;">
+Spring Recess
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+M May 6
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#12_r_markdown_presentations">R Markdown Presentations</a>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+M May 13
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#13_r_markdown_books">Bookdown</a>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+W May 15
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#14_presentations">Final Project Presentations</a>
+</td>
+<td style="text-align:left;">
+Presentations due
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+M May 20
+</td>
+<td style="text-align:left;">
+<a href="https://crumplab.github.io/psyc7709/Schedule.html#15_final_project">Final Project Papers due</a>
+</td>
+<td style="text-align:left;">
+Final project due
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="assignments-and-grading" class="section level3">
+<h3>Assignments and Grading</h3>
+<p>There are 8 weekly assignments, a midterm project, and a final project composed of an in-class presentation and a paper. The grading rubric is below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Assignment</th>
+<th align="right">Points</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Weekly assignments</td>
+<td align="right">7</td>
+<td align="right">56</td>
+</tr>
+<tr class="even">
+<td align="left">Midterm project</td>
+<td align="right">17</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">Final Presentation</td>
+<td align="right">7</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">Final Paper</td>
+<td align="right">20</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="right"></td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="universitys-policy-on-academic-integrity" class="section level3">
+<h3>University’s policy on Academic Integrity</h3>
+<p>The faculty and administration of Brooklyn College support an environment free from cheating and plagiarism. As a student, <strong>you are personally responsible for being aware of what constitutes cheating, and plagiarism; and, for avoiding both</strong>. You can view the complete text of the CUNY Academic Integrity Policy here: <a href="http://www.brooklyn.cuny.edu/bc/policies">http://www.brooklyn.cuny.edu/bc/policies</a> <strong>If a faculty member suspects a violation of academic integrity, and upon investigation, confirms that violation, or if the student admits the violation, the faculty member MUST report the violation</strong>.</p>
+<hr />
+</div>
+<div id="missing-an-exam-or-class" class="section level3">
+<h3>Missing an Exam or class</h3>
+<p>Students are expected to attend all classes. In the event of an emergency, contact me as soon as possible. If you are missing a class for religious reasons refer to the state law regarding non-attendance because of religious beliefs (p. 64 in the Undergraduate Bulletin or p. 40 of the Graduate Bulletin).</p>
+<hr />
+</div>
+<div id="accessibility" class="section level3">
+<h3>Accessibility</h3>
+<p>It is important to me that the course be accessible to all students. In order to receive disability-related academic accommodations students must first be registered with the Center for Student Disability Services. Students who have a documented disability or suspect they may have a disability are invited to set up an appointment with the Director of the Center for Student Disability Services, Ms. Valerie Stewart-Lovell at 718-951-5538. If you have already registered with the Center for Student Disability Services please provide me with the course accommodation form so we may discuss your specific accommodation. A guide and more information can be found here <a href="http://catsweb.cuny.edu">http://catsweb.cuny.edu</a></p>
+<hr />
+</div>
+<div id="email-correspondence" class="section level3">
+<h3>Email Correspondence</h3>
+<p>I will regularly use e-mail to send out announcements, changes in the syllabus, reminders about tests or due dates etc. It is your responsibility to check e-mail regularly to keep up-to-date with these announcements. I will use the e-mail address you have listed with the College. Therefore, please make sure that this is indeed the correct address.</p>
+<div id="general-help-with-research-and-writing" class="section level4">
+<h4>General Help with Research and Writing</h4>
+<p>The Library maintains a collection of links to sites that can assist you with proper citation format and paraphrasing and quoting other authors at <a href="https://library.brooklyn.cuny.edu/resources/?service=research-help">Research &amp; Writing Help</a>. The Learning Center has writing tutors available to help you with your writing <a href="http://lc.brooklyn.cuny.edu/">http://lc.brooklyn.cuny.edu/</a>.</p>
+<p>The best learning is done in conversation with others, whether they are people—classmates, teachers, friends—or texts—books, articles, essays, poems, films etc. It should not be a solitary process. However, the assignments that you hand in for this course must be done on your own, should represent your own thinking, and should be original work that you have done for this particular course. A good way to balance these two seemingly contradictory approaches (collaborative learning and original individually-produced work) without knowingly—or, even unwittingly—resorting to plagiarism or other forms of academic misconduct is to learn and meticulously observe the rules for citing the work of others (this could be the great point your roommate made that you used in your paper, it could be a well-turned phrase from an academic essay, or it could be anything in between). It is your responsibility to learn what constitutes plagiarism and the correct rules for citing sources—read the information on the following website carefully: <a href="http://www.brooklyn.cuny.edu/bc/policies/">http://www.brooklyn.cuny.edu/bc/policies/</a>. The bottom line is: passing off anyone’s words or ideas as your own for any reason whatsoever is plagiarism.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

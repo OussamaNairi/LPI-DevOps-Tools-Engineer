@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>README.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,9 +69,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -96,6 +94,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -110,7 +111,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -130,6 +130,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -151,19 +188,85 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -176,18 +279,36 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">LPI DevOps Tool Engineer</a>
+      <a class="navbar-brand" href="index.html">Psyc 7709</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="Syllabus.html">Syllabus</a>
 </li>
 <li>
-  <a href="Journal.html">Journal</a>
+  <a href="Schedule.html">Schedule</a>
 </li>
 <li>
-  <a href="Links.html">Links</a>
+  <a href="Videos.html">Videos</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="ExampleCode.html">ExampleCode</a>
+</li>
+<li>
+  <a href="Advanced.html">Package Notes</a>
+</li>
+<li>
+  <a href="MidtermAssignment.html">Midterm</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final</a>
+</li>
+<li>
+  <a href="book/docs/index.html">Our Book</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -205,46 +326,10 @@ $(document).ready(function () {
 </div>
 
 
-<div id="labjournalwebsite" class="section level1">
-<h1>LabJournalWebsite</h1>
-<p>An R Markdown website template for a lab journal <a href="https://crumplab.github.io/LabJournalWebsite/index.html" class="uri">https://crumplab.github.io/LabJournalWebsite/index.html</a></p>
-<p>To use this, click the download as .zip button to start from a local computer, or skip down to the github example to fork this and get started that way.</p>
-<p>The unzipped folder contains all of the files you need to compile a website in R Markdown. This should all work fine if you have the latest version of R and R-studio installed.</p>
-<div id="steps-for-compiling-on-your-local-computer" class="section level2">
-<h2>Steps for compiling on your local computer</h2>
-<ol style="list-style-type: decimal">
-<li>Make sure R and R-studio are installed</li>
-<li>Make sure the rmarkdown package is installed in R-studio. Open R-studio, click the packages tab in the lower left hand corner, click install packages, type in rmarkdown, make sure “install dependencies” is clicked on, then press install. Close R-studio.</li>
-<li>Navigate to the folder you just downloaded, open the ‘LabJournalWebsite.Proj’ file. This should automatically open R-studio, and your current working environment will be inside this project. That means everything you save will be auto saved to this folder (unless you tell R-studio to save something somewhere else.</li>
-<li>Inside R-studio you should see a files tab in the bottom right hand corner. Most files you click will be opened up as text files in the R-studio editor. Click the “Index.Rmd” file.</li>
-<li>To compile the entire website, find the build tab in the top right hand corner. You should see the option to “build website”. Click this. The website should be built.</li>
-<li>After the website is built, you should be able to see it in the R-studio browser. There is a little button (blue arrow with a little browser icon) that allows you to pop the website into your default web-browser. This way you can look at the website in your browser.</li>
-</ol>
-<p>Important: After compilation, all of the files for displaying your website are saved in the folder where your R project resides. When you look at these in a browser (for example, by going to the folder and dragging the index.html file into a browser), you are loading from your disk. Only you will be able to see the website, because it is on your hard-drive. You need to upload to a web server to serve the webpage on the internet.</p>
-</div>
-<div id="steps-for-serving-your-webpage-using-github-pages." class="section level2">
-<h2>Steps for serving your webpage using github pages.</h2>
-<p>This is the source code repository for making the webpage in R-studio. At the same time, the resulting website is being served from this repository at this link <a href="https://crumplab.github.io/LabJournalWebsite/index.html" class="uri">https://crumplab.github.io/LabJournalWebsite/index.html</a>.</p>
-<p>Every github repository has the capability of serving html files (web page files) contained in the repository, this is called github pages. How this works depends a little bit on the specific repository you are using. For this repository. The webpage is served from the docs folder. The example files are set so that when you compile the example in R-studio, the output automatically goes into the docs folder. As a result, when you have these files in a github repository, github will serve the html files in your docs folder as a website.</p>
-<p><strong>Steps</strong></p>
-<ol style="list-style-type: decimal">
-<li>For this repo to your github (press the fork button in top right hand corner, then choose your github account)</li>
-<li>You should now see a copy of this repo in your github account</li>
-<li>Click the Settings (also near top right), scroll down to Github Pages options</li>
-<li>click the optino to serve from docs folder</li>
-<li>You should see a little green message above the github pages options with a link to your new webpage.</li>
-</ol>
-<p><strong>Editing webpage and serving on github</strong></p>
-<ol style="list-style-type: decimal">
-<li>download <a href="https://desktop.github.com">github desktop</a></li>
-<li>make sure it is connected to your account</li>
-<li>clone the website repo to your local computer</li>
-<li>Open up the project file in the folder for your repo on your local computer (.rproj file)</li>
-<li>Edit the .rmd files in R-studio</li>
-<li>Recompile website (build website when index.rmd is loaded), or knit individual .rmd files</li>
-<li>send your changes back to the online github repository (note this can be done in github desktop, or directly in R-studio, in R-studio you will see a git tab if you are working in a git repo. Click the git tab, click the diff button, which will show you if there are any new changes. Click each of the files that you want to commit. Write a short note to describe the changes. Press the commit button. Wait a couple seconds, your changes should now be served on your website).</li>
-</ol>
-</div>
+<div id="psyc73800" class="section level1">
+<h1>psyc73800</h1>
+<p>Course website code for Psyc 73800 Cognitive Psychology @ GC of CUNY</p>
+<p>The website is <a href="https://crumplab.github.io/psyc7709">https://crumplab.github.io/psyc7709</a></p>
 </div>
 
 

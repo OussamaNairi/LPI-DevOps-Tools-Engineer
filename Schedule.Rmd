@@ -1,0 +1,343 @@
+---
+title: "Schedule"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
+---
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+#library(data.table)
+library(readxl)
+Lectures <- read_excel("Schedule.xlsx", sheet = 1, col_names = TRUE, col_types = NULL, na = "", skip = 0)
+Lectures[is.na(Lectures)]<- " "
+#Lectures <- fread("Lectures.csv")
+knitr::kable(Lectures)
+
+```
+
+### Getting Started
+
+Before we meet for our first class there are few things you should try at home to get started.
+
+1. Download and install R on your computer. This is the R website [https://www.r-project.org](https://www.r-project.org)
+2. Download and install R-studio. You must download and install R first before installing R-studio. The R-studio website is [https://www.rstudio.com](https://www.rstudio.com)
+3. Create a free github account. The github website is [https://github.com](https://github.com)
+4. Download and install github desktop [https://desktop.github.com](https://desktop.github.com)
+5. At this point you should have downloaded R and R-studio to your own computer. This will allow you to run R and R-studio locally. It is also possible to run R-studio in the cloud through your web-browser. To do this you need to create an account with R-studio cloud. Create an account here [https://rstudio.cloud](https://rstudio.cloud). **Note:** In class we will be using a computer lab wit R-studio installed on the computers. You will have the option of using the lab computer, or bringing your own laptop, and/or using R-studio through the cloud. 
+
+Don't worry if you ran into issues with these first steps, we will address them in class on Monday. 
+
+If you have R-studio working is there anything else you can do before we meet for the first time on Monday? Yes.
+
+You can follow the video tutorial on creating an R markdown website with github pages on the video page. And, you can get started with some of the readings, and you can begin messing around in R. Here are some things to read:
+
+1. [Programming for Psychologists, Chapter 1](https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html)
+2. [Programming for Psychologists, Chapter 2](https://crumplab.github.io/programmingforpsych/programming-in-r.html)
+3. [Navarros' Section 1: Core Toolkit](https://compcogscisydney.org/psyr/)
+
+We will be spending the first few weeks of the course working on solving different kinds of coding problems in R. These problems will help you learn the ins and outs of coding in R. You can get a head start by trying to solve the problems in this [list of programming challenges](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). 
+
+
+
+### 1. R, R Markdown, Websites, & Github
+
+#### Overview
+
+- Getting set-up with R, R-studio, using R-studio cloud, and Github.
+- Follow a tutorial to create a free Github account, and then create a webpage using R Markdown and host it for free on Github. Students will use their personal website throughout the course as a mechanism for submitting assignments and to document their progress learning R.
+- Introduction to basic programming concepts in R (variables, loops, logic, functions)
+
+#### Readings and Resources
+
+1. [Programming for Psychologists, Chapter 1](https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html)
+2. [Programming for Psychologists, Chapter 2](https://crumplab.github.io/programmingforpsych/programming-in-r.html)
+3. [Navarros' Section 1: Core Toolkit](https://compcogscisydney.org/psyr/)
+
+#### Assignment 1 (website)
+
+Due date: M Feb 4th
+
+a. Create a website using R Markdown and host it on Github pages, then submit the link to your website on Blackboard for Assignment 1. We will create the website in class using this template [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
+b. Edit and customize your website to make it your own. Edit the journal page and rename it to "R Basics".
+c. Use the new "R Basics" .rmd file to begin working through the list of [programming challenges](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). For each problem create a new header, briefly describe the problem, then create a code-block and write code to solve the problem.
+d. Throughout this course you will likely have many questions about how to solve different kinds of problems in R. We will use Github's issues tracking feature as a way for everyone to post questions and solutions. Go to the github repository for this course [https://github.com/CrumpLab/psyc7709](https://github.com/CrumpLab/psyc7709). You will see an issue tab, with a "say hello" issue posted. Please add a comment to this issue so that I know that you can post issues. Then, if you have a question about R, please create a new issue. The entire class should be monitoring the posted issues, and anyone who knows an answer can respond with a comment.
+
+---
+
+### 2. Basic Programming in R I
+
+#### Overview 
+
+- Continue working on solving programming challenges
+- More discussion on variable types in R, and using loops and logic to create simple algorithms.
+- Overview of useful intrinsic functions in R
+
+#### Readings and Resources
+
+1. [Programming for Psychologists, Chapter 1](https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html)
+2. [Programming for Psychologists, Chapter 2](https://crumplab.github.io/programmingforpsych/programming-in-r.html)
+3. [Navarros' Section 1: Core Toolkit](https://compcogscisydney.org/psyr/)
+
+#### Assignment 2 (R Basics I)
+
+Due date: M Feb 11th
+
+a. Continue adding to your "R Basics" page to document progress in solving [programming challenges](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). Upload link to website showing progress. Students to should attempt all of the simple programming challenges, and begin working on the harder problems. As you complete each problem it is a good idea to try and be creative by solving the problem in different ways. So, it is ok to have multiple solutions for each problem.
+b. **New**: The new assignment for this week is to learn about existing functions in R, these are called R intrinsics. I have created an assignment worksheet with instructions, [https://crumplab.github.io/psyc7709_2019/Presentations/RInstrinsics.html](https://crumplab.github.io/psyc7709_2019/Presentations/RInstrinsics.html). The assignment contains a list of existing functions. Your task is to create a page on your website. Then, copy the list of functions from the assignment. For each function, you will write a brief description (only needs to be a sentence) of what it does, and then you will write a code chunk demonstrating that you can use the function. This will help you become familiar with existing functions that you can use. If you get stuck and are unable to figure out what a function does, post your question on the github issues tab for this course [https://github.com/CrumpLab/psyc7709/issues](https://github.com/CrumpLab/psyc7709/issues).
+
+tips: I added a video showing how to [add a new page to your R markdown website](https://crumplab.github.io/psyc7709_2019/Videos.html#add_a_page_to_website)
+
+
+---
+
+### 3. Basic Programming in R II
+
+
+#### Overview 
+
+- Continue working on solving programming challenges
+- Writing functions in R
+
+#### Readings and Resources
+
+1. [Programming for Psychologists, Chapter 1](https://crumplab.github.io/programmingforpsych/fundamentals-of-computer-programming-languages.html)
+2. [Programming for Psychologists, Chapter 2](https://crumplab.github.io/programmingforpsych/programming-in-r.html)
+3. [Navarros' Section 1: Core Toolkit](https://compcogscisydney.org/psyr/)
+
+#### Assignment 3 (R Basics II)
+
+Due date: M Feb 25th
+
+a. Last week to document progress in solving [programming challenges](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). Upload link to website showing progress. Students should attempt and solve as many of the harder problems as they can.
+
+b. Create and share an R package containing custom functions on github. Follow the instructions in the [R package assignment](https://crumplab.github.io/psyc7709_2019/Presentations/RPackages.html) that we will discuss in class. Upload the link to your new github repository containing your R package to blackboard.
+
+tips: I added a video showing how to [create a new R package and publish it to github.com](https://crumplab.github.io/psyc7709_2019/Videos.html#publish_r_package_to_github)
+
+c. **NEW** this an addition to your assignment not discussed in class. The assignment instructions are in the [github assignment](https://crumplab.github.io/psyc7709_2019/Presentations/Github.html) document. This assignment gives you more practice using github features. You will be forking a repo, adding to the code, then making a pull-request to have your new changes be incorporated into the master repository. Also, you will be able to see other students solutions to two of the harder programming problems.
+
+tips: I added a video showing how to [fork and make a pull request](https://crumplab.github.io/psyc7709_2019/Videos.html#fork_a_repo_and_make_a_pull_request)
+
+---
+
+### 4. Data-Visualization
+
+
+#### Overview
+
+- Introduction to the grammar of graphics ggplot2 package for data-visualization
+
+#### Readings and Resources
+
+1. [ggplot2 reference website](https://ggplot2.tidyverse.org)
+2. [Hadley Wickham's, R for Data Science, Chapter 3 Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+3. [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+
+#### Assignment 4 (Data-Vis)
+
+Your assignment is to practice making graphs in ggplot2. [Click this link to see the assignment instructions](https://crumplab.github.io/psyc7709_2019/Presentations/DataVis.html). You will be making a new R markdown page documenting your code for making graphs in the assignment. Load this page onto your website, then submit the link to the page on blackboard.
+
+Due date: M Mar 4th
+
+---
+
+### 5. Data-Wrangling
+
+We had a snow day for this class. Here is a short video tutorial to help you get started and complete the assignment for this week. We will go over everything here next class as well.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5PdHgYpM-1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Overview
+
+- Loading Data into R
+- Data formatting (dataframes and data.tables)
+- Introduction to the dplyr package for filtering, selecting, augmenting, and summarizing data sets (and more).
+
+#### Resources
+
+1. [Dplyr reference](https://dplyr.tidyverse.org)
+2. [Hadley Wickham's, R for Data Science, Chapter 5 Data transformation](http://r4ds.had.co.nz/transform.html)
+3. [Data import Cheatsheet](https://resources.rstudio.com/rstudio-cheatsheets/data-import-cheat-sheet)
+
+#### Assignment 5 (Data-Wrangling)
+
+1. [Class notes on Data-wrangling](https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangling.html)
+2. [Example R Markdown analysis report](https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleExampleStroop.html)
+3. [Your Rmarkdown Assignment](https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleFlanker_student.Rmd) This links to the .rmd file, that you can use as a template to complete the assignment. Using this template file, create a new page on your website, and submit the link
+4. [Answer sheet for assignment](https://crumplab.github.io/psyc7709_2019/Presentations/DataWrangleFlanker.html) You can use this to check your work. If you don't get the same numbers, then one of us did something wrong.
+
+Due date: M Mar 18th
+
+---
+
+### 6. Common inferential tests
+
+#### Overview
+
+- t-tests, anovas, and linear regresssion, and more in R
+- Using R to simulate null-hypotheses
+- Overview and discussion of midterm project (three parts due over the next three weeks)
+
+#### Readings and Resources
+
+1. [Class notes on Statistics](https://crumplab.github.io/psyc7709_2019/Presentations/Statistics.html)
+2. [Matthew Crump's, Programming for Psychologists, chapter 5](https://crumplab.github.io/programmingforpsych/simulating-and-analyzing-data-in-r.html)
+
+#### Assignment 6 (Stats)
+
+- [Statistics Assignment](https://crumplab.github.io/psyc7709_2019/Presentations/StatisticsAssignment.html), due M Mar 25th
+  - This assignment asks you to simulate the null hypothesis in various ways using R.
+- The [midterm project](https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html) begins this week (due aprill 8th)
+
+---
+
+### 7. APA papers using Papaja
+
+#### Overview
+
+- Introduction to creating reproducible APA manuscripts using the papaja package. Students learn how to use the template for writing an APA report in R Markdown, which allows them to embed their R-scripts for data-analysis into the manuscript, allowing others to reproduce their analysis.
+- Midterm project continued
+
+#### Readings and Resources
+
+1. [Installing papaja](https://crumplab.github.io/psyc7709_2019/Presentations/papaja.html)
+2. [Frederick Aust & Marius Barth's papaja package: Reproducible APA manuscripts with R Markdown](https://crsh.github.io/papaja_man/)
+
+#### Midterm Assignment (due M April 8th)
+
+[midterm project](https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html)
+
+- part 1: Reproducible Report
+- part 2: Convert to APA-style report using papaja
+
+---
+
+### 8. Data simulation
+
+#### Overview
+
+- Simulating data from scratch, and using monte-carlo methods for power analysis and sample-size planning.
+
+#### Readings and Resources
+
+1. [Class notes on simulation](https://crumplab.github.io/psyc7709_2019/Presentations/Simulation.html)
+2. [Matthew Crump's, Programming for Psychologists, chapter 5](https://crumplab.github.io/programmingforpsych/simulating-and-analyzing-data-in-r.html)
+
+#### Midterm Assignment (due M April 8th)
+
+[midterm project](https://crumplab.github.io/psyc7709_2019/MidtermAssignment.html)
+
+- part 3: Simulation based power anlaysis
+
+---
+
+### 9. Shiny Web Apps
+
+#### Overview
+
+- Introduction to R Shiny for building interactive web-applications
+
+#### Readings and Resources
+
+1. [Class Notes on Shiny](https://crumplab.github.io/psyc7709_2019/Presentations/Shiny_tutorial.html)
+2. [R shiny tutorials](https://shiny.rstudio.com/tutorial/#written-tutorials)
+
+#### Assignment 7 (Shiny)
+
+1. Make a R shiny app (it can do whatever you want to make).
+2. Host the app as a folder on Github, or upload to [shinyapps.io](https://www.shinyapps.io) cloud server (need to create free account).
+3. Submit link on Blackboard
+
+Due date: M Apr 15th
+
+---
+
+### 10. Optimizing R scripts
+
+#### Overview
+
+- Principles of scripting for efficient memory management, including using profiles packages for determining which parts of a script can be further optimized. Discussion of vectorization in R.
+
+#### Readings and Resources
+
+1. [Class notes on optimization](https://crumplab.github.io/psyc7709_2019/Presentations/Optimization.html)
+2. [Hadley Wickham's, Advanced R, profiling chapter](http://adv-r.had.co.nz/Profiling.html)
+
+
+#### Assignment 7 (Optimization)
+
+No Assignment
+
+---
+
+### 11. Open science and Final Project planning
+
+#### Overview
+
+- Open science and transparency. 
+
+#### Readings and Resources
+
+1. [Hadley Wickham's, Advanced R, profiling chapter](http://adv-r.had.co.nz/Profiling.html)
+
+#### Final Project
+
+Presentation due: M May 15th
+Paper due date: M May 20th
+
+
+---
+
+### 12. R Markdown Presentations
+
+#### Overview
+
+- Using R Markdown and the xaringan package to compile R Markdown documents into slide presentations for the web.
+
+#### Readings and Resources
+
+1. [R markdown slide presentations tutorial](https://rmarkdown.rstudio.com/lesson-11.html)
+2. [Yihui Xie, J. J. Allaire, & Garrett Grolemund's "R Markdown: The Definitive guide", Chapter 7](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+3. [example presentation](https://crumplab.github.io/psyc7709_2019/FinalPresentation/RPackagePresentation.html#1)
+
+#### Final Project
+
+Presentation due: M May 15th
+Paper due date: M May 20th
+
+---
+
+### 13. R Markdown books
+
+#### Overview
+
+- Introduction to using the R Markdown format to compile documents into web-books, .pdf's, and epubs using the bookdown package.
+
+#### Readings and Resources
+
+1. [Yihui Xie, J. J. Allaire, & Garrett Grolemund's "R Markdown: The Definitive guide", Chapter 12](https://bookdown.org/yihui/rmarkdown/books.html)
+
+#### Final Project
+
+Presentation due: M May 15th
+Paper due date: M May 20th
+
+---
+
+### 14. Presentations
+
+#### Overview
+
+- Final Project individual presentations
+
+---
+
+### 15. Final project
+
+#### Overview
+

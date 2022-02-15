@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Example Code</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Psyc 7709</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="Schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="Videos.html">Videos</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="ExampleCode.html">ExampleCode</a>
+</li>
+<li>
+  <a href="Advanced.html">Package Notes</a>
+</li>
+<li>
+  <a href="MidtermAssignment.html">Midterm</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final</a>
+</li>
+<li>
+  <a href="book/docs/index.html">Our Book</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Example Code</h1>
+
+</div>
+
+
+<div id="loops" class="section level2">
+<h2>Loops</h2>
+<p>Check R help for on Control Flow <code>?Control</code>.</p>
+<p><code>for(){}</code> <code>for(loop control){do something each iteration}</code></p>
+<pre class="r"><code>for(iterator in vector){
+  #do something
+}</code></pre>
+<p>Loop control is defined in between the parentheses. The name of the iterator is placed on the left of <code>in</code>(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of <code>in</code>. Specifically, the following is happening.</p>
+<p>Loop steps: 1. iterator &lt;- vector[1] 2. iterator &lt;- vector[2] 3. iterator &lt;- vector[3] 4. etc.</p>
+<p>The loop will automatically stop once it reaches the last item in the vector. The loop can be stopped before that using the <code>break</code> command.</p>
+<pre class="r"><code># Make a loop do something 5 times
+# i is the iterator
+# 1:5 creates a vector with 5 numbers in it, 1, 2, 3, 4, 5
+# the loop will run 5 times, because there are five things to assign to i
+for(i in 1:5){
+  print(5)
+}</code></pre>
+<pre><code>## [1] 5
+## [1] 5
+## [1] 5
+## [1] 5
+## [1] 5</code></pre>
+<pre class="r"><code># show the value of i each step of the loop
+for(i in 1:5){
+  print(i)
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<pre class="r"><code># define the vector to loop over in advance
+my_sequence &lt;- 1:5
+for(i in my_sequence){
+  print(i)
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<pre class="r"><code># Reminder that i becomes the next value in the vector
+# your vector can have any order 
+my_sequence &lt;- c(1,5,2,3,4)
+for(i in my_sequence){
+  print(i)
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 5
+## [1] 2
+## [1] 3
+## [1] 4</code></pre>
+<pre class="r"><code># index vector does not need to be numbers
+my_things &lt;- c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
+for(i in my_things){
+  print(i)
+}</code></pre>
+<pre><code>## [1] &quot;A&quot;
+## [1] &quot;B&quot;
+## [1] &quot;C&quot;
+## [1] &quot;D&quot;</code></pre>
+<div id="breaking-a-loop" class="section level3">
+<h3>Breaking a loop</h3>
+<p><code>break</code> stops a loop. Used with logical statements to define the conditions necessary to cause the break.</p>
+<pre class="r"><code>for(i in 1:10){
+  if(i &lt;5){
+    print(i)
+  } else{
+    break
+  }
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4</code></pre>
+</div>
+<div id="while-loops" class="section level3">
+<h3>While loops</h3>
+<p>While loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met.</p>
+<p>This one prints i while i is less than 6. As soon as i becomes “not less than 6”, then the loop stops. Critically, inside the loop, the value of i increases each iteration.</p>
+<pre class="r"><code>i &lt;- 1 # create an variable
+while (i &lt; 6) {
+  print(i)
+  i = i+1 #add one eachs step of the loop
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+</div>
+<div id="repeat-loops" class="section level3">
+<h3>Repeat loops</h3>
+<p>Similar to while, but let’s do things until a condition is met.</p>
+<pre class="r"><code>i&lt;-0
+repeat{
+  i&lt;-i+1
+  print(i)
+  if(i==5){
+    break
+  }
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+</div>
+<div id="examples" class="section level3">
+<h3>Examples</h3>
+<p>Braces are not needed on one line</p>
+<pre class="r"><code>for(i in 1:5) print(i)</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<p>Using the value of the iterator to assign in values systematically to another variable.</p>
+<pre class="r"><code># put 1 into the first five positions of x
+x &lt;- c() # create empty vector
+for(i in 1:5){
+  x[i] &lt;- 1  # assign 1 to the ith slot in x
+}
+x</code></pre>
+<pre><code>## [1] 1 1 1 1 1</code></pre>
+<pre class="r"><code># put the numbers 1-5 in the first 5 positions of x
+x &lt;-c()
+for(i in 1:5){
+  x[i] &lt;- i
+}
+x</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>Make your own counter, when you need one</p>
+<pre class="r"><code>a &lt;- c(1,4,3,5,7,6,8,2)
+odd &lt;- c()
+counter &lt;- 0
+for(i in a){  # i will the values of a in each position
+  counter &lt;- counter+1
+  if(i%%2 != 0){
+    odd[counter] &lt;- &quot;odd&quot;
+  } else {
+    odd[counter] &lt;- &quot;even&quot;
+  }
+}
+odd</code></pre>
+<pre><code>## [1] &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;odd&quot;  &quot;odd&quot;  &quot;even&quot; &quot;even&quot; &quot;even&quot;</code></pre>
+<pre class="r"><code># An alternative strategy
+
+a &lt;- c(1,4,3,5,7,6,8,2)
+odd &lt;- c()
+# 1:length(a) creates a sequence from 1 to length
+for(i in 1:length(a)){  
+  if(a[i]%%2 != 0){
+    odd[i] &lt;- &quot;odd&quot;
+  } else {
+    odd[i] &lt;- &quot;even&quot;
+  }
+}
+odd</code></pre>
+<pre><code>## [1] &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;odd&quot;  &quot;odd&quot;  &quot;even&quot; &quot;even&quot; &quot;even&quot;</code></pre>
+<p>Nesting loops</p>
+<pre class="r"><code>for(i in 1:5){
+  for(j in 1:5){
+   print(c(i,j))
+  }
+}</code></pre>
+<pre><code>## [1] 1 1
+## [1] 1 2
+## [1] 1 3
+## [1] 1 4
+## [1] 1 5
+## [1] 2 1
+## [1] 2 2
+## [1] 2 3
+## [1] 2 4
+## [1] 2 5
+## [1] 3 1
+## [1] 3 2
+## [1] 3 3
+## [1] 3 4
+## [1] 3 5
+## [1] 4 1
+## [1] 4 2
+## [1] 4 3
+## [1] 4 4
+## [1] 4 5
+## [1] 5 1
+## [1] 5 2
+## [1] 5 3
+## [1] 5 4
+## [1] 5 5</code></pre>
+<pre class="r"><code># example of using nested loops to fill the contents
+# of a matrix
+
+my_matrix &lt;- matrix(0,ncol=5,nrow=5)
+for(i in 1:5){
+  for(j in 1:5){
+   my_matrix[i,j] &lt;- i*j
+  }
+}
+my_matrix</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    2    4    6    8   10
+## [3,]    3    6    9   12   15
+## [4,]    4    8   12   16   20
+## [5,]    5   10   15   20   25</code></pre>
+<p>break exits out of the immediate loop</p>
+<pre class="r"><code># the inside loop stops when i+j is greater than 5
+# the outside loop keeps going
+
+sum_of_i_j &lt;- c()
+counter &lt;- 0
+for(i in 1:5){
+  for(j in 1:5){
+    counter &lt;- counter+1
+    sum_of_i_j[counter] &lt;- i+j
+    if(i+j &gt; 5){
+      break
+    }
+  }
+}
+sum_of_i_j</code></pre>
+<pre><code>##  [1] 2 3 4 5 6 3 4 5 6 4 5 6 5 6 6</code></pre>
+</div>
+</div>
+<div id="logical-comparison" class="section level2">
+<h2>Logical comparison</h2>
+<p>Logic statements are used to compare two things, or two sets of things. The output of comparison is a TRUE or FALSE statment. If many things are being compared at once, the output could be many TRUE or FALSE statements for each comparison</p>
+<div id="equal-to" class="section level3">
+<h3>equal to</h3>
+<pre class="r"><code>1==1 # is 1 equal to 1?</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>1==2 # is 1 equal to 2?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>c(1,2,3) == c(2,1,3) # compares each element with each element</code></pre>
+<pre><code>## [1] FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>1 == c(2,1,3)</code></pre>
+<pre><code>## [1] FALSE  TRUE FALSE</code></pre>
+</div>
+<div id="not-equal-to" class="section level3">
+<h3>not equal to</h3>
+<pre class="r"><code>1!=1 # is 1 equal to 1?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>1!=2 # is 1 equal to 2?</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>c(1,2,3) != c(2,1,3) # compares each element with each element</code></pre>
+<pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
+<pre class="r"><code>1 != c(2,1,3)</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
+</div>
+<div id="greater-than-less-than" class="section level3">
+<h3>Greater than/ less than</h3>
+<pre class="r"><code>1 &gt; 1 # is 1 greater than 1?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>5 &gt; 1 # is 5 greater than 1?</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>3 &lt; 2 # is 3 less than 2?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>3 &lt; 1 # is 3 less than 1?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>c(1,2,3) &gt; c(2,1,3) # ask the question element by element</code></pre>
+<pre><code>## [1] FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>c(1,2,3) &lt; c(2,1,3)</code></pre>
+<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+<pre class="r"><code>2 &gt; c(1,2,3) # is greater than each of the numbers</code></pre>
+<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+</div>
+<div id="section" class="section level3">
+<h3>&gt;= &lt;=</h3>
+<p>Is something greater than or equal to something else</p>
+<pre class="r"><code>1 &gt;= 1 # is 1 greater than 1?</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>5 &gt;= 1 # is 5 greater than 1?</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>3 &lt;= 2 # is 3 less than 2?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>3 &lt;= 1 # is 3 less than 1?</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>c(1,2,3) &gt;= c(2,1,3) # ask the question element by element</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<pre class="r"><code>c(1,2,3) &lt;= c(2,1,3)</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
+<pre class="r"><code>2 &gt;= c(1,2,3) # is greater than each of the numbers</code></pre>
+<pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
+</div>
+<div id="and" class="section level3">
+<h3>AND</h3>
+<p>The ampersand <code>&amp;</code> is used for AND, which allows use to evaluate whether two or more properties are all TRUE.</p>
+<pre class="r"><code># is 16 divisible by 4 AND 8
+16%%4 == 0 &amp; 16%%8 ==0</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code># is 16 divisible by 4 AND 3
+16%%4 == 0 &amp; 16%%3 ==0</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code># is 16 divisible by 8 and 4 and 2
+16%%4 == 0 &amp; 16%%8 ==0 &amp; 16%%2 ==0</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="or" class="section level3">
+<h3>OR</h3>
+<p>The <code>|</code> is used for OR, which allows use to evaluate at least one of the properties is TRUE.</p>
+<pre class="r"><code># is 16 divisible by 4 OR 8
+16%%4 == 0 | 16%%8 ==0</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code># is 16 divisible by 4 OR 3
+# it is divisible by 4, so the answer is TRUE
+# because at least one of the comparisons is TRUE
+16%%4 == 0 | 16%%3 ==0</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="true-false" class="section level3">
+<h3>TRUE FALSE</h3>
+<p>When R returns values as TRUE or FALSE, it return a logical variable. It also treats TRUE as a 1, and FALSE as a 0. In the example below we see it is possible sum up a logical variable with multiple TRUE and FALSE entries.</p>
+<pre class="r"><code>c(1,2,3) == c(1,2,3)</code></pre>
+<pre><code>## [1] TRUE TRUE TRUE</code></pre>
+<pre class="r"><code>sum(c(1,2,3) == c(1,2,3))</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>c(1,2,3) == c(2,1,3)</code></pre>
+<pre><code>## [1] FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>sum(c(1,2,3) == c(2,1,3))</code></pre>
+<pre><code>## [1] 1</code></pre>
+</div>
+</div>
+<div id="if-else" class="section level2">
+<h2>IF ELSE</h2>
+<p>A carnival operator needs to check if people are taller than a line to see if they can ride the ride. Every time someone goes through the gate, they run an IF ELSE control structure in their head. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride.</p>
+<p>In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different.</p>
+<p>IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something.</p>
+<p>Consider this:</p>
+<pre class="r"><code>a &lt;- 1 # define a to be a 1
+if(a==1){  
+  print(a) # this is what happens if a==1
+} else {
+  print(&quot;A is not 1&quot;) # this is what happens if a is not 1
+}</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>a &lt;- 2 # define a to be a 1
+if(a==1){  
+  print(a) # this is what happens if a==1
+} else {
+  print(&quot;A is not 1&quot;) # this is what happens if a is not 1
+}</code></pre>
+<pre><code>## [1] &quot;A is not 1&quot;</code></pre>
+<p>Normally we find IF and ELSE in a loop like this:</p>
+<pre class="r"><code>a &lt;- c(1,0,1,0,0,0,1) # make a variable contain 1s and 0s
+
+# write a loop to check each element in the variable
+# and do different things depending on the element
+
+for(i in a){
+  if(i == 1){
+    print(&quot;I&#39;m a 1&quot;) # what to do when i is 1
+  } else {
+    print(&quot;I&#39;m not a 1&quot;) # what to do when i is not 1
+  }
+}</code></pre>
+<pre><code>## [1] &quot;I&#39;m a 1&quot;
+## [1] &quot;I&#39;m not a 1&quot;
+## [1] &quot;I&#39;m a 1&quot;
+## [1] &quot;I&#39;m not a 1&quot;
+## [1] &quot;I&#39;m not a 1&quot;
+## [1] &quot;I&#39;m not a 1&quot;
+## [1] &quot;I&#39;m a 1&quot;</code></pre>
+<p>We can have multiple conditions in our if statements.</p>
+<pre class="r"><code>a &lt;- c(1,2,3,1,2,0,1) # make a variable contain 1s and 0s
+
+# write a loop to check each element in the variable
+# and do different things depending on the element
+
+for(i in a){
+  if(i == 1){
+    print(&quot;I&#39;m a 1&quot;) # what to do when i is 1
+  } else if (i==2){
+    print(&quot;I&#39;m a 2&quot;) # what to do when i is 2
+  } else if (i==3){
+    print(&quot;I&#39;m a 3&quot;) # what to do when i is 3
+  } else {
+    print(&quot;I&#39;m not any of the above&quot;) #what to do when none are true
+  }
+}</code></pre>
+<pre><code>## [1] &quot;I&#39;m a 1&quot;
+## [1] &quot;I&#39;m a 2&quot;
+## [1] &quot;I&#39;m a 3&quot;
+## [1] &quot;I&#39;m a 1&quot;
+## [1] &quot;I&#39;m a 2&quot;
+## [1] &quot;I&#39;m not any of the above&quot;
+## [1] &quot;I&#39;m a 1&quot;</code></pre>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p>This section discusses the syntax for writing custom functions in R.</p>
+<div id="function-syntax" class="section level3">
+<h3>function syntax</h3>
+<pre class="r"><code>function_name &lt;- function(input1,input2){
+  #code here
+  return(something)
+}</code></pre>
+</div>
+<div id="example-functions" class="section level3">
+<h3>example functions</h3>
+<p>This function has no input between the <code>()</code>. Whenever you run this function, it will simply return whatever is placed inside the <code>return</code> statement.</p>
+<pre class="r"><code># define the function
+print_hello_world &lt;- function(){
+  return(print(&quot;hello world&quot;))
+}
+
+# use the function
+print_hello_world()</code></pre>
+<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<p>This function simply takes an input, and then returns the input without modifying it.</p>
+<pre class="r"><code>return_input &lt;- function(input){
+  return(input)
+}
+
+# the variable input is assigned a 1
+# then we return(input), which will result in a 1
+# because the function internally assigns 1 to the input
+return_input(1)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>a &lt;- &quot;something&quot;
+return_input(a)</code></pre>
+<pre><code>## [1] &quot;something&quot;</code></pre>
+<p>This function takes an input, then creates an internal variable called temp and assigns input+1. Then the contents of temp is returned. Note there, is no checking of the input, so it will return an erro if you input a character (can’t add one to a character in R)</p>
+<pre class="r"><code>add_one &lt;- function(input){
+  temp &lt;- input+1
+  return(temp)
+}
+
+add_one(1)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>add_one(&quot;a&quot;)</code></pre>
+<pre><code>## Error in input + 1: non-numeric argument to binary operator</code></pre>
+<p>This function adds some input checking. We only add one if the input is a numeric type. Otheriwse, we use <code>stop()</code> to return an error message to the console</p>
+<pre class="r"><code>add_one &lt;- function(input){
+  if(class(input) == &quot;numeric&quot;){
+    temp &lt;- input+1
+    return(temp)
+  } else {
+    return(stop(&quot;input must be numeric&quot;))
+  }
+}
+
+add_one(1)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>add_one(&quot;a&quot;)</code></pre>
+<pre><code>## Error in add_one(&quot;a&quot;): input must be numeric</code></pre>
+<p>A function with three inputs</p>
+<pre class="r"><code>add_multiply &lt;- function(input, x_plus,x_times){
+  temp &lt;- (input+x_plus)*x_times
+  return(temp)
+}
+
+# input is 1
+# x_plus &lt;- 2
+# x_times &lt;- 3
+# will return (1+2)*3 = 9
+add_multiply(1,2,3)</code></pre>
+<pre><code>## [1] 9</code></pre>
+</div>
+</div>
+<div id="vectorized-approaches" class="section level2">
+<h2>Vectorized approaches</h2>
+<p>Loops are a common tool for doing something many times. R can accomplish the goal of “doing something many times” without loops, using a vectorized approach.</p>
+<div id="basic-examples" class="section level3">
+<h3>Basic examples</h3>
+<p>Let’s take a close look at some very basic differences between using a loop, and using R’s vectorized approach</p>
+<p>Consider the problem of adding a single number to all of the numbers in a vector.</p>
+<pre class="r"><code>nums &lt;- c(1,2,3,4)
+
+# vectorized approach
+# R automatically adds 1 to all of the numbers
+nums+1</code></pre>
+<pre><code>## [1] 2 3 4 5</code></pre>
+<pre class="r"><code># loop approach
+# much longer to write out
+for(i in 1:length(nums)){
+  nums[i] &lt;- nums[i]+1
+}
+nums</code></pre>
+<pre><code>## [1] 2 3 4 5</code></pre>
+<p>How about adding two vectors together, so we add the first two numbers together, then the second two numbers etc.</p>
+<pre class="r"><code>A &lt;- c(1,2,3,4)
+B &lt;- c(1,2,3,4)
+
+# vectorized approach
+A+B</code></pre>
+<pre><code>## [1] 2 4 6 8</code></pre>
+<pre class="r"><code># loop approach
+the_sum &lt;-c()
+for(i in 1:length(A)){
+  the_sum[i] &lt;- A[i]+B[i]
+}
+the_sum</code></pre>
+<pre><code>## [1] 2 4 6 8</code></pre>
+<p>How about comparing the identity of the elements in two vectors to see if they are the same or not?</p>
+<pre class="r"><code>A &lt;- c(&quot;c&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;)
+B &lt;- c(&quot;d&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;)
+
+#vectorized approach
+A==B</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code># loop approach
+compared &lt;-c()
+for(i in 1:length(A)){
+  if(A[i]==B[i]){
+    compared[i] &lt;- TRUE
+  } else {
+    compared[i] &lt;- FALSE
+  }
+}
+compared</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+</div>
+<div id="replicate" class="section level3">
+<h3>Replicate</h3>
+<p><code>replicate(n, expr)</code> allows you to repeat a function many times, and return the answer in a vector</p>
+<pre class="r"><code># returns 1 randomly sampled number from 1 to 10
+sample(1:10,1)</code></pre>
+<pre><code>## [1] 8</code></pre>
+<pre class="r"><code># let&#39;s repeat the above 10 times using replicate
+replicate(10,sample(1:10,1))</code></pre>
+<pre><code>##  [1] 10  5 10  5  2  9  2  4  3  5</code></pre>
+<p>The next example shows how to write a function to do something, and then use the function inside replicate to repeat the function many times.</p>
+<p>For example, we write a function to run a one-sample t-test on a random sample drawn from a normal distribution</p>
+<pre class="r"><code>ttest_result &lt;- function(){
+  sample &lt;- rnorm(10,0,1)
+  t_out &lt;- t.test(sample, mu=0)
+  return(t_out$statistic)
+}
+
+# get 10 t-values from repeating the above 10 times
+replicate(10, ttest_result() )</code></pre>
+<pre><code>##          t          t          t          t          t          t 
+##  0.4534718  0.9607405 -1.5162592 -1.4030149 -0.3533028  0.9144664 
+##          t          t          t          t 
+##  1.4682818 -0.7693148 -0.2584975  1.2003557</code></pre>
+</div>
+<div id="apply-family" class="section level3">
+<h3>apply family</h3>
+<p>The <code>apply</code> family of functions can be used to “apply” a function across elements of an object. A general overview can be found <a href="https://www.datacamp.com/community/tutorials/r-tutorial-apply-family">here</a></p>
+<p>Some of the apply functions include: <code>apply()</code>, <code>lapply</code>, and <code>sapply</code>.</p>
+</div>
+<div id="lapply-and-sapply" class="section level3">
+<h3>lapply and sapply</h3>
+<p>Here is part of the definition of lapply from the help file:</p>
+<p>lapply returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.</p>
+<p>Let’s see some examples:</p>
+<p>Let’s apply a function to each of the elements in a vector. To keep things simple, our function will add 1 to a number</p>
+<pre class="r"><code>some_numbers &lt;- c(1,2,3,4)
+
+add_one &lt;- function(x){
+  return(x+1)
+}
+
+# returns a list, containing the answers
+lapply(some_numbers, add_one)</code></pre>
+<pre><code>## [[1]]
+## [1] 2
+## 
+## [[2]]
+## [1] 3
+## 
+## [[3]]
+## [1] 4
+## 
+## [[4]]
+## [1] 5</code></pre>
+<pre class="r"><code># unlists the list
+unlist(lapply(some_numbers,add_one))</code></pre>
+<pre><code>## [1] 2 3 4 5</code></pre>
+<pre class="r"><code># sapply does the unlisting for you
+sapply(some_numbers, add_one)</code></pre>
+<pre><code>## [1] 2 3 4 5</code></pre>
+<p>An alternative syntax for lapply and sapply let’s you define the function you want to apply inside the <code>lapply</code> or <code>sapply</code> function.</p>
+<p>In this case, each element in the vector <code>some_numbers</code> will become the <code>x</code> value in the function.</p>
+<pre class="r"><code>some_numbers &lt;- c(1,2,3,4)
+
+lapply(some_numbers, FUN = function(x){x+1})</code></pre>
+<pre><code>## [[1]]
+## [1] 2
+## 
+## [[2]]
+## [1] 3
+## 
+## [[3]]
+## [1] 4
+## 
+## [[4]]
+## [1] 5</code></pre>
+<pre class="r"><code>sapply(some_numbers, FUN = function(x){x+1})</code></pre>
+<pre><code>## [1] 2 3 4 5</code></pre>
+</div>
+<div id="apply" class="section level3">
+<h3>apply</h3>
+<p>The <code>apply</code> function can be used on 2-dimensional data, and allows you to apply a function across the rows or the columns of the data.</p>
+<p>Let’s say you had a 5x5 matrix of random numbers. Let’s find the sum of each row</p>
+<pre class="r"><code>random_matrix &lt;- matrix(sample(1:10,25, replace=TRUE),ncol=5)
+
+# applies the sum function to each row
+# 1 tells apply to go across rows
+apply(random_matrix,1,sum)</code></pre>
+<pre><code>## [1] 27 19 29 25 27</code></pre>
+<p>The sum of each column</p>
+<pre class="r"><code># applies the sum function to each column
+# 2 tells apply to go across columns
+apply(random_matrix, 2, sum)</code></pre>
+<pre><code>## [1] 23 34 26 25 19</code></pre>
+<p>Let’s say we have a matrix storing 3 samples. Each sample has 10 numbers. Each sample is stored in a column, and each row represents an observation.</p>
+<pre class="r"><code>sample_matrix &lt;- matrix(rnorm(30,0,1),ncol=3)</code></pre>
+<p>Let’s use apply to conduct 10 one-sample t-tests, one for each column. In this example, we can pass the <code>mu=0</code> parameter into the <code>t.test</code> function. However, we will return the entire ouput of each t-test in a list.</p>
+<pre class="r"><code>apply(sample_matrix,2,t.test, mu=0)</code></pre>
+<pre><code>## [[1]]
+## 
+##  One Sample t-test
+## 
+## data:  newX[, i]
+## t = 0.20558, df = 9, p-value = 0.8417
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.6487225  0.7784194
+## sample estimates:
+##  mean of x 
+## 0.06484848 
+## 
+## 
+## [[2]]
+## 
+##  One Sample t-test
+## 
+## data:  newX[, i]
+## t = -1.2098, df = 9, p-value = 0.2572
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.7980401  0.2418945
+## sample estimates:
+##  mean of x 
+## -0.2780728 
+## 
+## 
+## [[3]]
+## 
+##  One Sample t-test
+## 
+## data:  newX[, i]
+## t = -1.598, df = 9, p-value = 0.1445
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.9627990  0.1656493
+## sample estimates:
+##  mean of x 
+## -0.3985749</code></pre>
+<p>What if we wanted to return only the t-values, rather than whole output?</p>
+<p>You might try this, but it doesn’t work</p>
+<pre class="r"><code>apply(sample_matrix,2,t.test$statistic, mu=0)</code></pre>
+<pre><code>## Error in t.test$statistic: object of type &#39;closure&#39; is not subsettable</code></pre>
+<p>So, we write a custom function</p>
+<pre class="r"><code>apply(sample_matrix, 2, 
+      FUN = function(x){
+        t_out &lt;- t.test(x,mu=0)
+        return(t_out$statistic)
+      })</code></pre>
+<pre><code>## [1]  0.2055822 -1.2097766 -1.5980156</code></pre>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

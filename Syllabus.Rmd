@@ -1,0 +1,98 @@
+---
+title: "Syllabus"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
+---
+
+### PSYC 7709 – Using R for Reproducible Psychological Research (Special Topics)
+
+Spring 2019
+
+Location: 5201 James Hall
+Time: Monday 3:40pm-6:25pm
+
+Instructor:  Matthew Crump, [mcrump@brooklyn.cuny.edu](mcrump@brooklyn.cuny.edu)
+
+
+### General Course Description and Objectives
+
+Practical and skill-focused introduction to using open-source programming software (R, R-studio, and R Markdown) in several aspects of Psychological Research. Course covers basic scripting/coding in R, data-wrangling, advanced graphing and data animation, using R for creating reproducible manuscripts, slide presentations, websites, and web-books for communicating research.
+
+Special Prerequisites: NONE
+
+*Course objectives**: in this course you will learn:
+
+1.	Basic scripting in R: use of variables, logic, loops, functions, intrinsics, packages, workspaces 
+2.	Data transformation: processing data-files into a desired form for a desired analysis
+3.	Data visualization: advanced plotting and graphing of data, creation of journal-quality figures in R.
+4.	Data Simulation: how to create statistical models of data sets for advanced sample-size planning, as well as evaluating existing findings in the literature.
+5.	Communicating research: how to use R Markdown scripts to create APA style manuscripts, websites, web-books, and web-based presentations for communicating research.
+6.	Reproducible research: principles of open-science, including tools for data-sharing, manuscript sharing, pre-registration of research designs, method-sharing, pre-print sharing, and use of online repository services for disseminating shared materials.
+
+
+### Course Structure
+
+We meet once per week in a computer lab. Each class will involve a small amount of lecturing on R concepts, and a large amount of time for students to complete coding and analysis problems assigned on a weekly basis. By completing the assignments, students will create a coding portfolio demonstrating a variety of data-analysis and communication skills. The process of learning to code is one that involves patience, time, and practice. Students are expected to practice coding outside of class time each week.
+
+
+### Lecture Schedule
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+#library(data.table)
+library(readxl)
+Lectures <- read_excel("Schedule.xlsx", sheet = 1, col_names = TRUE, col_types = NULL, na = "", skip = 0)
+Lectures[is.na(Lectures)]<- " "
+#Lectures <- fread("Lectures.csv")
+knitr::kable(Lectures)
+
+```
+
+### Assignments and Grading
+
+There are 8 weekly assignments, a midterm project, and a final project composed of an in-class presentation and a paper. The grading rubric is below:
+
+| Assignment |  Points| Total|
+|:----------|--------:|-------:|
+| Weekly assignments | 7 | 56|
+| Midterm project | 17 | 17 |
+| Final Presentation | 7| 7|
+| Final Paper | 20 | 20|
+|||100|
+
+### University’s policy on Academic Integrity
+
+The faculty and administration of Brooklyn College support an environment free from cheating and plagiarism. As a student, **you are personally responsible for being aware of what constitutes cheating, and plagiarism; and, for avoiding both**. You can view the complete text of the CUNY Academic Integrity Policy here:
+[http://www.brooklyn.cuny.edu/bc/policies](http://www.brooklyn.cuny.edu/bc/policies)
+**If a faculty member suspects a violation of academic integrity, and upon investigation, confirms that violation, or if the student admits the violation, the faculty member MUST report the violation**.
+
+---
+
+### Missing an Exam or class
+
+Students are expected to attend all classes. In the event of an emergency, contact me as soon as possible. If you are missing a class for religious reasons refer to the state law regarding non-attendance because of religious beliefs (p. 64 in the Undergraduate Bulletin or p. 40 of the Graduate Bulletin).
+
+
+---
+
+### Accessibility
+
+It is important to me that the course be accessible to all students. In order to receive disability-related academic accommodations students must first be registered with the Center for Student Disability Services. Students who have a documented disability or suspect they may have a disability are invited to set up an appointment with the Director of the Center for Student Disability Services, Ms. Valerie Stewart-Lovell at 718-951-5538. If you have already registered with the Center for Student Disability Services please provide me with the course accommodation form so we may discuss your specific accommodation. A guide and more information can be found here [http://catsweb.cuny.edu](http://catsweb.cuny.edu)
+
+---
+
+### Email Correspondence
+
+I will regularly use e-mail to send out announcements, changes in the syllabus, reminders about tests or due dates etc. It is your responsibility to check e-mail regularly to keep up-to-date with these announcements. I will use the e-mail address you have listed with the College. Therefore, please make sure that this is indeed the correct address.
+
+#### General Help with Research and Writing
+
+The Library maintains a collection of links to sites that can assist you with proper citation format and paraphrasing and quoting other authors at [Research & Writing Help](https://library.brooklyn.cuny.edu/resources/?service=research-help).  The Learning Center has writing tutors available to help you with your writing [http://lc.brooklyn.cuny.edu/](http://lc.brooklyn.cuny.edu/).
+
+The best learning is done in conversation with others, whether they are people—classmates, teachers, friends—or texts—books, articles, essays, poems, films etc. It should not be a solitary process. However, the assignments that you hand in for this course must be done on your own, should represent your own thinking, and should be original work that you have done for this particular course. A good way to balance these two seemingly contradictory approaches (collaborative learning and original individually-produced work) without knowingly—or, even unwittingly—resorting to plagiarism or other forms of academic misconduct is to learn and meticulously observe the rules for citing the work of others (this could be the great point your roommate made that you used in your paper, it could be a well-turned phrase from an academic essay, or it could be anything in between). It is your responsibility to learn what constitutes plagiarism and the correct rules for citing sources—read the information on the following website carefully: [http://www.brooklyn.cuny.edu/bc/policies/](http://www.brooklyn.cuny.edu/bc/policies/). The bottom line is: passing off anyone’s words or ideas as your own for any reason whatsoever is plagiarism.
+
+
