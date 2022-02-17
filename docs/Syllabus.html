@@ -427,392 +427,269 @@ div.tocify {
 
 
 <div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
-<h3>701.1 Modern Software Development (weight: 6) </h3>
-<p>Weight: 6</p>
-<p>Description: Candidates should be able to design software solutions suitable for modern runtime environments. Candidates should understand how services handle data persistence, sessions, status information, transactions, concurrency, security, performance, availability, scaling, load balancing, messaging, monitoring and APIs. Furthermore, candidates should understand the implications of agile and DevOps on software development.</p>
-<p>Key Knowledge Areas:
-
-  Understand and design service based applications
-  Understand common API concepts and standards
-  Understand aspects of data storage, service status and session handling
-  Design software to be run in containers
-  Design software to be deployed to cloud services
-  Awareness of risks in the migration and integration of monolithic legacy software
-  Understand common application security risks and ways to mitigate them
-  Understand the concept of agile software development
-  Understand the concept of DevOps and its implications to software developers and operators</p>
-  <p>The following is a partial list of the used files, terms and utilities:
-
-    REST, JSON
-    Service Orientated Architectures (SOA)
-    Microservices
-    Immutable servers
-    Loose coupling
-    Cross site scripting, SQL injections, verbose error reports, API authentication, consistent enforcement of transport encryption
-    CORS headers and CSRF tokens
-    ACID properties and CAP theorem</p>
-</div>
-<div id="general-course-description-and-objectives" class="section level3">
-<h3>701.2 Standard Components and Platforms for Software (weight: 2)</h3>
-<p>Practical and skill-focused introduction to using open-source programming software (R, R-studio, and R Markdown) in several aspects of Psychological Research. Course covers basic scripting/coding in R, data-wrangling, advanced graphing and data animation, using R for creating reproducible manuscripts, slide presentations, websites, and web-books for communicating research.</p>
-<p>Special Prerequisites: NONE</p>
-<p>*Course objectives**: in this course you will learn:</p>
-<ol style="list-style-type: decimal">
-<li>Basic scripting in R: use of variables, logic, loops, functions, intrinsics, packages, workspaces</li>
-<li>Data transformation: processing data-files into a desired form for a desired analysis</li>
-<li>Data visualization: advanced plotting and graphing of data, creation of journal-quality figures in R.</li>
-<li>Data Simulation: how to create statistical models of data sets for advanced sample-size planning, as well as evaluating existing findings in the literature.</li>
-<li>Communicating research: how to use R Markdown scripts to create APA style manuscripts, websites, web-books, and web-based presentations for communicating research.</li>
-<li>Reproducible research: principles of open-science, including tools for data-sharing, manuscript sharing, pre-registration of research designs, method-sharing, pre-print sharing, and use of online repository services for disseminating shared materials.</li>
-</ol>
-</div>
-<div id="course-structure" class="section level3">
-<h3>701.3 Source Code Management (weight: 5)</h3>
-<p>We meet once per week in a computer lab. Each class will involve a small amount of lecturing on R concepts, and a large amount of time for students to complete coding and analysis problems assigned on a weekly basis. By completing the assignments, students will create a coding portfolio demonstrating a variety of data-analysis and communication skills. The process of learning to code is one that involves patience, time, and practice. Students are expected to practice coding outside of class time each week.</p>
-</div>
-<div id="lecture-schedule" class="section level3">
-<h3>701.4 Continuous Integration and Continuous Delivery (weight: 5)</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-Week
-</th>
-<th style="text-align:left;">
-Date
-</th>
-<th style="text-align:left;">
-Topic
-</th>
-<th style="text-align:left;">
-Assignments
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Before class
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#getting_started">Getting Started</a>
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-M Jan 28
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#1_r,_r_markdown,_websites,__github">Introduction to R Markdown</a>
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-M Feb 4
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#2_basic_programming_in_r_i">Basic Programming in R I</a>
-</td>
-<td style="text-align:left;">
-week I due (website)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-M Feb 11
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#3_basic_programming_in_r_ii">Basic Programming in R II</a>
-</td>
-<td style="text-align:left;">
-week 2 due (basics I)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-<strong>M Feb 18</strong>
-</td>
-<td style="text-align:left;">
-No Class
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-M Feb 25
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#4_data-visualization">Data-Visualization</a>
-</td>
-<td style="text-align:left;">
-week 3 due (basics II)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-M Mar 4
-</td>
-<td style="text-align:left;">
-Snow day (make up W May 15th)
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-M Mar 11
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#5_data-wrangling">Data-Wrangling</a>
-</td>
-<td style="text-align:left;">
-week 4 due (data-vis)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-M Mar 18
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#6_common_inferential_tests">Common inferential tests</a>
-</td>
-<td style="text-align:left;">
-week 5 due (data-wrangling)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-M Mar 25
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#8_apa_papers_using_papaja">APA Papers with papaja</a>
-</td>
-<td style="text-align:left;">
-week 6 due (stats)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-M Apr 1
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#7_data_simulation">Data Simulation</a>
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-M Apr 8
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#9_shiny_web_apps">Shiny Web Apps</a>
-</td>
-<td style="text-align:left;">
-Midterm project due
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-M Apr 15
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#10_optimizing_r_scripts">Optimizing R Scripts</a>
-</td>
-<td style="text-align:left;">
-week 9 due (shiny)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-M Apr 22
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#11_open_science_and_final_project_planning">Open Science and Final project planning</a>
-</td>
-<td style="text-align:left;">
-week 10 due (optimization)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-M Apr 29
-</td>
-<td style="text-align:left;">
-Spring Recess
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-M May 6
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#12_r_markdown_presentations">R Markdown Presentations</a>
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-13
-</td>
-<td style="text-align:left;">
-M May 13
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#13_r_markdown_books">Bookdown</a>
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-14
-</td>
-<td style="text-align:left;">
-W May 15
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#14_presentations">Final Project Presentations</a>
-</td>
-<td style="text-align:left;">
-Presentations due
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-M May 20
-</td>
-<td style="text-align:left;">
-<a href="https://crumplab.github.io/psyc7709/Schedule.html#15_final_project">Final Project Papers due</a>
-</td>
-<td style="text-align:left;">
-Final project due
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="assignments-and-grading" class="section level3">
-<h3>702.1 Container Usage (weight: 7)</h3>
-<p>There are 8 weekly assignments, a midterm project, and a final project composed of an in-class presentation and a paper. The grading rubric is below:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Assignment</th>
-<th align="right">Points</th>
-<th align="right">Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Weekly assignments</td>
-<td align="right">7</td>
-<td align="right">56</td>
-</tr>
-<tr class="even">
-<td align="left">Midterm project</td>
-<td align="right">17</td>
-<td align="right">17</td>
-</tr>
-<tr class="odd">
-<td align="left">Final Presentation</td>
-<td align="right">7</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
-<td align="left">Final Paper</td>
-<td align="right">20</td>
-<td align="right">20</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="right"></td>
-<td align="right">100</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="universitys-policy-on-academic-integrity" class="section level3">
-<h3>702.2 Container Deployment and Orchestration (weight: 5)</h3>
-<p>The faculty and administration of Brooklyn College support an environment free from cheating and plagiarism. As a student, <strong>you are personally responsible for being aware of what constitutes cheating, and plagiarism; and, for avoiding both</strong>. You can view the complete text of the CUNY Academic Integrity Policy here: <a href="http://www.brooklyn.cuny.edu/bc/policies">http://www.brooklyn.cuny.edu/bc/policies</a> <strong>If a faculty member suspects a violation of academic integrity, and upon investigation, confirms that violation, or if the student admits the violation, the faculty member MUST report the violation</strong>.</p>
-<hr />
-</div>
-<div id="missing-an-exam-or-class" class="section level3">
-<h3>702.3 Container Infrastructure (weight: 4)
-</h3>
-<p>Students are expected to attend all classes. In the event of an emergency, contact me as soon as possible. If you are missing a class for religious reasons refer to the state law regarding non-attendance because of religious beliefs (p. 64 in the Undergraduate Bulletin or p. 40 of the Graduate Bulletin).</p>
-<hr />
-</div>
-<div id="accessibility" class="section level3">
-<h3>703.1 Virtual Machine Deployment (weight: 4)
-</h3>
-<p>It is important to me that the course be accessible to all students. In order to receive disability-related academic accommodations students must first be registered with the Center for Student Disability Services. Students who have a documented disability or suspect they may have a disability are invited to set up an appointment with the Director of the Center for Student Disability Services, Ms. Valerie Stewart-Lovell at 718-951-5538. If you have already registered with the Center for Student Disability Services please provide me with the course accommodation form so we may discuss your specific accommodation. A guide and more information can be found here <a href="http://catsweb.cuny.edu">http://catsweb.cuny.edu</a></p>
-<hr />
-</div>
-<div id="email-correspondence" class="section level3">
-<h3>703.2 Cloud Deployment (weight: 2)</h3>
-<p>I will regularly use e-mail to send out announcements, changes in the syllabus, reminders about tests or due dates etc. It is your responsibility to check e-mail regularly to keep up-to-date with these announcements. I will use the e-mail address you have listed with the College. Therefore, please make sure that this is indeed the correct address.</p>
+<h3>Topic 701: Software Engineering </h3>
 <div id="general-help-with-research-and-writing" class="section level4">
-<h4>General Help with Research and Writing</h4>
-<p>The Library maintains a collection of links to sites that can assist you with proper citation format and paraphrasing and quoting other authors at <a href="https://library.brooklyn.cuny.edu/resources/?service=research-help">Research &amp; Writing Help</a>. The Learning Center has writing tutors available to help you with your writing <a href="http://lc.brooklyn.cuny.edu/">http://lc.brooklyn.cuny.edu/</a>.</p>
-<p>The best learning is done in conversation with others, whether they are people—classmates, teachers, friends—or texts—books, articles, essays, poems, films etc. It should not be a solitary process. However, the assignments that you hand in for this course must be done on your own, should represent your own thinking, and should be original work that you have done for this particular course. A good way to balance these two seemingly contradictory approaches (collaborative learning and original individually-produced work) without knowingly—or, even unwittingly—resorting to plagiarism or other forms of academic misconduct is to learn and meticulously observe the rules for citing the work of others (this could be the great point your roommate made that you used in your paper, it could be a well-turned phrase from an academic essay, or it could be anything in between). It is your responsibility to learn what constitutes plagiarism and the correct rules for citing sources—read the information on the following website carefully: <a href="http://www.brooklyn.cuny.edu/bc/policies/">http://www.brooklyn.cuny.edu/bc/policies/</a>. The bottom line is: passing off anyone’s words or ideas as your own for any reason whatsoever is plagiarism.</p>
+  <h4><strong>701.1 Modern Software Development (weight: 6) </strong> </h4>
+  <p><strong>Weight: </strong>6</p>
+  <p><strong>Description:</strong> Candidates should be able to design software solutions suitable for modern runtime environments. Candidates should understand how services handle data persistence, sessions, status information, transactions, concurrency, security, performance, availability, scaling, load balancing, messaging, monitoring and APIs. Furthermore, candidates should understand the implications of agile and DevOps on software development.</p>
+  <p><strong>Key Knowledge Areas:</strong></p>
+  <ul><li>Understand and design service based applications</li>
+  <li>Understand common API concepts and standards</li>
+  <li>Understand aspects of data storage, service status and session handling</li>
+  <li>Design software to be run in containers</li>
+  <li>Design software to be deployed to cloud services</li>
+  <li>Awareness of risks in the migration and integration of monolithic legacy software</li>
+  <li>Understand common application security risks and ways to mitigate them</li>
+  <li>Understand the concept of agile software development</li>
+  <li>Understand the concept of DevOps and its implications to software developers and operators</li>
+  </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+  <ul><li>REST, JSON</li>
+  <li>Service Orientated Architectures (SOA)</li>
+  <li>Microservices</li>
+  <li>Immutable servers</li>
+  <li>Loose coupling</li>
+  <li>Cross site scripting, SQL injections, verbose error reports, API authentication, consistent enforcement of transport encryption</li>
+  <li>CORS headers and CSRF tokens</li>
+  <li>ACID properties and CAP theorem</li>
+  </ul><p> </p>
 </div>
+  <div id="general-help-with-research-and-writing" class="section level4">
+    <h4><strong>701.2 Standard Components and Platforms for Software (weight: 2)</strong></h4>
+    <p><strong>Weight:</strong> 2</p>
+    <p><strong>Description:</strong> Candidates should understand services offered by common cloud platforms. They should be able to include these services in their application architectures and deployment toolchains and understand the required service configurations. OpenStack service components are used as a reference implementation.</p>
+    <p><strong>Key Knowledge Areas:</strong></p>
+    <ul><li>Features and concepts of object storage</li>
+    <li>Features and concepts of relational and NoSQL databases</li>
+    <li>Features and concepts of message brokers and message queues</li>
+    <li>Features and concepts of big data services</li>
+    <li>Features and concepts of application runtimes / PaaS</li>
+    <li>Features and concepts of content delivery networks</li>
+    </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+    <ul><li>OpenStack Swift</li>
+    <li>OpenStack Trove</li>
+    <li>OpenStack Zaqar</li>
+    <li>CloudFoundry</li>
+    <li>OpenShift</li>
+    </ul><p> </p>    </div>
+    <div id="general-help-with-research-and-writing" class="section level4">
+      <h4<strong>701.3 Source Code Management (weight: 5)</strong></h4>
+      <p><strong>Weight:</strong> 5</p>
+      <p><strong>Description:</strong> Candidates should be able to use Git to manage and share source code. This includes creating and contributing to a repository as well as the usage of tags, branches and remote repositories. Furthermore, the candidate should be able to merge files and resolve merging conflicts.</p>
+      <p><strong>Key Knowledge Areas:</strong></p>
+      <ul><li>Understand Git concepts and repository structure</li>
+      <li>Manage files within a Git repository</li>
+      <li>Manage branches and tags</li>
+      <li>Work with remote repositories and branches as well as submodules</li>
+      <li>Merge files and branches</li>
+      <li>Awareness of SVN and CVS, including concepts of centralized and distributed SCM solutions</li>
+      </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+      <ul><li>git</li>
+      <li>.gitignore</li>
+      </ul><p> </p>      </div>
+      <div id="general-help-with-research-and-writing" class="section level4">
+        <h4><strong>701.4 Continuous Integration and Continuous Delivery (weight: 5)</strong></h4>
+        <p><strong>Weight:</strong> 5</p>
+        <p><strong>Description:</strong> Candidates should understand the principles and components of a continuous integration and continuous delivery pipeline. Candidates should be able to implement a CI/CD pipeline using Jenkins, including triggering the CI/CD pipeline, running unit, integration and acceptance tests, packaging software and handling the deployment of tested software artifacts. This objective covers the feature set of Jenkins version 2.0 or later.</p>
+        <p><strong>Key Knowledge Areas:</strong></p>
+        <ul><li>Understand the concepts of Continuous Integration and Continuous Delivery</li>
+        <li>Understand the components of a CI/CD pipeline, including builds, unit, integration and acceptance tests, artifact management, delivery and deployment</li>
+        <li>Understand deployment best practices</li>
+        <li>Understand the architecture and features of Jenkins, including Jenkins Plugins, Jenkins API, notifications and distributed builds</li>
+        <li>Define and run jobs in Jenkins, including parameter handling</li>
+        <li>Fingerprinting, artifacts and artifact repositories</li>
+        <li>Understand how Jenkins models continuous delivery pipelines and implement a declarative continuous delivery pipeline in Jenkins</li>
+        <li>Awareness of possible authentication and authorization models</li>
+        <li>Understanding of the Pipeline Plugin</li>
+        <li>Understand the features of important Jenkins modules such as Copy Artifact Plugin, Fingerprint Plugin, Docker Pipeline, Docker Build and Publish plugin, Git Plugin, Credentials Plugin</li>
+        <li>Awareness of Artifactory and Nexus</li>
+        </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+        <ul><li><span class="notranslate">Step, Node, Stage</span></li>
+        <li><span class="notranslate">Jenkins SDL</span></li>
+        <li><span class="notranslate">Jenkinsfile</span></li>
+        <li>Declarative Pipeline</li>
+        <li>Blue-green and canary deployment</li>
+        </ul></div>      
 </div>
+<div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
+  <h3>Topic 702: Container Management </h3>
+  <div id="general-help-with-research-and-writing" class="section level4">
+    <h4><strong>702.1 Container Usage (weight: 7)</strong></h4>
+    <p><strong>Weight: </strong>7</p>
+    <p><strong>Description: </strong>Candidates should be able to build, share and operate Docker containers. This includes creating Dockerfiles, using a Docker registry, creating and interacting with containers as well as connecting containers to networks and storage volumes. This objective covers the feature set of Docker version 17.06 or later.</p>
+    <p><strong>Key Knowledge Areas:</strong></p>
+    <ul><li>Understand the Docker architecture</li>
+    <li>Use existing Docker images from a Docker registry</li>
+    <li>Create Dockerfiles and build images from Dockerfiles</li>
+    <li>Upload images to a Docker registry</li>
+    <li>Operate and access Docker containers</li>
+    <li>Connect container to Docker networks</li>
+    <li>Use Docker volumes for shared and persistent container storage</li>
+    </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+    <ul><li><span class="notranslate">docker</span></li>
+    <li><span class="notranslate">Dockerfile</span></li>
+    <li><span class="notranslate">.dockerignore</span></li>
+    </ul><p> </p>    </div>
+    <div id="general-help-with-research-and-writing" class="section level4">
+      <h4><strong>702.2 Container Deployment and Orchestration (weight: 5)</strong></h4>
+      <p><strong>Weight:</strong> 5</p>
+      <p><strong>Description:</strong> Candidates should be able to run and manage multiple containers that work together to provide a service. This includes the orchestration of Docker containers using Docker Compose in conjunction with an existing Docker Swarm cluster as well as using an existing Kubernetes cluster. This objective covers the feature sets of Docker Compose version 1.14 or later, Docker Swarm included in Docker 17.06 or later and Kubernetes 1.6 or later.</p>
+      <p><strong>Key Knowledge Areas:</strong></p>
+      <ul><li>Understand the application model of Docker Compose</li>
+      <li>Create and run Docker Compose Files (version 3 or later)</li>
+      <li>Understand the architecture and functionality of Docker Swarm mode</li>
+      <li>Run containers in a Docker Swarm, including the definition of services, stacks and the usage of secrets</li>
+      <li>Understand the architecture and application model Kubernetes</li>
+      <li>Define and manage a container-based application for Kubernetes, including the definition of Deployments, Services, ReplicaSets and Pods</li>
+      </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+      <ul><li><span class="notranslate">docker-compose</span></li>
+      <li><span class="notranslate">docker</span></li>
+      <li><span class="notranslate">kubectl</span></li>
+      </ul><p> </p>      </div>
+      <div id="general-help-with-research-and-writing" class="section level4">
+        <h4><strong>702.3 Container Infrastructure (weight: 4)</strong></h4>
+        <p><strong>Weight:</strong> 4</p>
+        <p><strong>Description:</strong> Candidates should be able to set up a runtime environment for containers. This includes running containers on a local workstation as well as setting up a dedicated container host. Furthermore, candidates should be aware of other container infrastructures, storage, networking and container specific security aspects. This objective covers the feature set of Docker version 17.06 or later and Docker Machine 0.12 or later.</p>
+        <p><strong>Key Knowledge Areas:</strong></p>
+        <ul><li>Use Docker Machine to setup a Docker host</li>
+        <li>Understand Docker networking concepts, including overlay networks</li>
+        <li>Create and manage Docker networks</li>
+        <li>Understand Docker storage concepts</li>
+        <li>Create and manage Docker volumes</li>
+        <li>Awareness of Flocker and flannel</li>
+        <li>Understand the concepts of service discovery</li>
+        <li>Basic feature knowledge of CoreOS Container Linux, rkt and etcd</li>
+        <li>Understand security risks of container virtualization and container images and how to mitigate them</li>
+        </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+        <ul><li><span class="notranslate">docker-machine</span></li>
+        </ul>    </div>
+  </div>
+  <div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
+    <h3>Topic 703: Machine Deployment </h3>
+    <div id="general-help-with-research-and-writing" class="section level4">
+      <h4><strong>703.1 Virtual Machine Deployment (weight: 4)</strong></h4>
+      <p><strong>Weight:</strong> 4</p>
+      <p><strong>Description:</strong> Candidates should be able to automate the deployment of a virtual machine with an operating system and a specific set of configuration files and software.</p>
+      <p><strong>Key Knowledge Areas:</strong></p>
+      <ul><li>Understand Vagrant architecture and concepts, including storage and networking</li>
+      <li>Retrieve and use boxes from Atlas</li>
+      <li>Create and run Vagrantfiles</li>
+      <li>Access Vagrant virtual machines</li>
+      <li>Share and synchronize folder between a Vagrant virtual machine and the host system</li>
+      <li>Understand Vagrant provisioning, including File, Shell, Ansible and Docker</li>
+      <li>Understand multi-machine setup</li>
+      </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+      <ul><li><span class="notranslate">vagrant</span></li>
+      <li><span class="notranslate">Vagrantfile</span></li>
+      </ul><p> </p>      </div>
+      <div id="general-help-with-research-and-writing" class="section level4">
+        <h4><strong>703.2 Cloud Deployment (weight: 2)</strong></h4>
+        <p><strong>Weight:</strong> 2</p>
+        <p><strong>Description:</strong> Candidates should be able to configure IaaS cloud instances and adjust them to match their available hardware resources, specifically, disk space and volumes. Additinally, candidates should be able to configure instances to allow secure SSH logins and prepare the instances to be ready for a configuration management tool such as Ansible.</p>
+        <p><strong>Key Knowledge Areas:</strong></p>
+        <ul><li>Understanding the features and concepts of cloud-init, including user-data and initializing and configuring cloud-init</li>
+        <li>Use cloud-init to create, resize and mount file systems, configure user accounts, including login credentials such as SSH keys and install software packages from the distribution’s repository</li>
+        <li>Understand the features and implications of IaaS clouds and virtualization for a computing instance, such as snapshotting, pausing, cloning and resource limits.</li>
+        </ul><p> </p>        </div>
+        <div id="general-help-with-research-and-writing" class="section level4">
+          <h4><strong>703.3 System Image Creation (weight: 2)</strong></h4>
+          <p><strong>Weight:</strong> 2</p>
+          <p><strong>Description:</strong> Candidates should be able to create images for containers, virtual machines and IaaS cloud instances.</p>
+          <p><strong>Key Knowledge Areas:</strong></p>
+          <ul><li>Understand the functionality and features of Packer</li>
+          <li>Create and maintain template files</li>
+          <li>Build images from template files using different builders</li>
+          </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+          <ul><li>packer</li>
+          </ul>          </div>
+    </div>
+    <div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
+      <h3>Topic 704: Configuration Management </h3>
+      <div id="general-help-with-research-and-writing" class="section level4">
+        <h4><strong>704.1 Ansible (weight: 8)</strong></h4>
+        <p><strong>Weight: </strong>8</p>
+        <p><strong>Description: </strong>Candidates should be able to use Ansible to ensure a target server is in a specific state regarding its configuration and installed software. This objective covers the feature set of Ansible version 2.2 or later.</p>
+        <p><strong>Key Knowledge Areas:</strong></p>
+        <ul><li>Understand the principles of automated system configuration and software installation</li>
+        <li>Create and maintain inventory files</li>
+        <li>Understand how Ansible interacts with remote systems</li>
+        <li>Manage SSH login credentials for Ansible, including using unprivileged login accounts</li>
+        <li>Create, maintain and run Ansible playbooks, including tasks, handlers, conditionals, loops and registers</li>
+        <li>Set and use variables</li>
+        <li>Maintain secrets using Ansible vaults</li>
+        <li>Write Jinja2 templates, including using common filters, loops and conditionals</li>
+        <li>Understand and use Ansible roles and install Ansible roles from Ansible Galaxy</li>
+        <li>Understand and use important Ansible tasks, including file, copy, template, ini_file, lineinfile, patch, replace, user, group, command, shell, service, systemd, cron, apt, debconf, yum, git, and debug</li>
+        <li>Awareness of dynamic inventory</li>
+        <li>Awareness of Ansibles features for non-Linux systems</li>
+        <li>Awareness of Ansible containers</li>
+        </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+        <ul><li><span class="notranslate">ansible.cfg</span></li>
+        <li><span class="notranslate">ansible-playbook</span></li>
+        <li><span class="notranslate">ansible-vault</span></li>
+        <li><span class="notranslate">ansible-galaxy</span></li>
+        <li><span class="notranslate">ansible-doc</span></li>
+        </ul><p> </p>        </div>
+        <div id="general-help-with-research-and-writing" class="section level4">
+          <h4><strong>704.2 Other Configuration Management Tools (weight: 2)</strong></h4>
+          <p><strong>Weight: </strong>2</p>
+          <p><strong>Description:</strong> Candidates should understand the main features and principles of important configuration management tools other than Ansible.</p>
+          <p><strong>Key Knowledge Areas:</strong></p>
+          <ul><li>Basic feature and architecture knowledge of <span class="notranslate">Puppet</span>.</li>
+          <li>Basic feature and architecture knowledge of <span class="notranslate">Chef</span>.</li>
+          </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+          <ul><li><span class="notranslate">Manifest, Class, Recipe, Cookbook</span></li>
+          <li><span class="notranslate">puppet</span></li>
+          <li><span class="notranslate">chef</span></li>
+          <li><span class="notranslate">chef-solo</span></li>
+          <li><span class="notranslate">chef-client</span></li>
+          <li><span class="notranslate">chef-server-ctl</span></li>
+          <li><span class="notranslate">knife</span></li>
+          </ul>          </div>
+      </div>
+      <div id="psyc-7709-using-r-for-reproducible-psychological-research-special-topics" class="section level3">
+        <h3>Topic 705: Service Operations </h3>
+        <div id="general-help-with-research-and-writing" class="section level4">
+          <h4><strong>705.1 IT Operations and Monitoring (weight: 4)</strong></h4>
+          <p><strong>Weight: </strong>4</p>
+          <p><strong>Description: </strong>Candidates should understand how IT infrastructure is involved in delivering a service. This includes knowledge about the major goals of IT operations, understanding functional and nonfunctional properties of an IT services and ways to monitor and measure them using Prometheus. Furthermore candidates should understand major security risks in IT infrastructure. This objective covers the feature set of Prometheus 1.7 or later.</p>
+          <p><strong>Key Knowledge Areas:</strong></p>
+          <ul><li>Understand goals of IT operations and service provisioning, including nonfunctional properties such as availability, latency, responsiveness</li>
+          <li>Understand and identify metrics and indicators to monitor and measure the technical functionality of a service</li>
+          <li>Understand and identify metrics and indicators to monitor and measure the logical functionality of a service</li>
+          <li>Understand the architecture of Prometheus, including Exporters, Pushgateway, Alertmanager and Grafana</li>
+          <li>Monitor containers and microservices using Prometheus</li>
+          <li>Understand the principles of IT attacks against IT infrastructure</li>
+          <li>Understand the principles of the most important ways to protect IT infrastructure</li>
+          <li>Understand core IT infrastructure components and their the role in deployment</li>
+          </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+          <ul><li><span class="notranslate">Prometheus, Node exporter, Pushgateway, Alertmanager, Grafana</span></li>
+          <li>Service exploits, brute force attacks, and denial of service attacks</li>
+          <li>Security updates, packet filtering and application gateways</li>
+          <li>Virtualization hosts, DNS and load balancers</li>
+          </ul><p> </p>          </div>
+          <div id="general-help-with-research-and-writing" class="section level4">
+            <h4><strong>705.2 Log Management and Analysis (weight: 4)</strong></h4>
+            <p><strong>Weight: </strong>4</p>
+            <p><strong>Description: </strong>Candidates should understand the role of log files in operations and troubleshooting. They should be able to set up centralized logging infrastructure based on Logstash to collect and normalize log data. Furthermore, candidates should understand how Elasticsearch and Kibana help to store and access log data.</p>
+            <p><strong>Key Knowledge Areas:</strong></p>
+            <ul><li>Understand how application and system logging works</li>
+            <li>Understand the architecture and functionality of Logstash, including the lifecycle of a log message and Logstash plugins</li>
+            <li>Understand the architecture and functionality of Elasticsearch and Kibana in the context of log data management (Elastic Stack)</li>
+            <li>Configure Logstash to collect, normalize, transform and store log data</li>
+            <li>Configure syslog and Filebeat to send log data to Logstash</li>
+            <li>Configure Logstash to send email alerts</li>
+            <li>Understand application support for log management</li>
+            </ul><p><strong>The following is a partial list of the used files, terms and utilities:</strong></p>
+            <ul><li><span class="notranslate">logstash</span></li>
+            <li><span class="notranslate">input, filter, output</span></li>
+            <li><span class="notranslate">grok filter</span></li>
+            <li>Log files, metrics</li>
+            <li>syslog.conf</li>
+            <li>/etc/logstash/logstash.yml</li>
+            <li>/etc/filebeat/filebeat.yml</li>
+            </ul>            </div>
+        </div>
+
 
 
 
